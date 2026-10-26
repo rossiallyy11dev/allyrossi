@@ -1,189 +1,513 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ally Rossi | Web Design</title>
-    
-    <!-- Google Fonts: Work Sans -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ally Rossi | Web Design</title>
+  
+  <!-- Google Font: Work Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600;1,700&display=swap" rel="stylesheet">
 
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+  <style>
+    /* Global Styles */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        body {
-            font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-            background-color: #5D99C6;
-            color: #FFFFFF;
-            padding: 0;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+    html {
+      scroll-behavior: smooth;
+    }
 
-        /* Navbar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            padding: 40px 60px;
-        }
+    body {
+      font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: #ffffff;
+      background-color: #5E99C2;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-        .brand-logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            color: #FFFFFF;
-            text-decoration: none;
-            letter-spacing: -0.01em;
-        }
+    /* Navigation Bar */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 2.5rem 4rem;
+      z-index: 1000;
+      background: transparent;
+    }
 
-        .nav-links {
-            display: flex;
-            gap: 36px;
-        }
+    .brand {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: #ffffff;
+      text-decoration: none;
+      letter-spacing: -0.02em;
+    }
 
-        .nav-link {
-            font-size: 1rem;
-            font-weight: 400;
-            color: #FFFFFF;
-            text-decoration: none;
-            transition: opacity 0.2s ease;
-            cursor: pointer;
-        }
+    nav {
+      display: flex;
+      gap: 2.5rem;
+    }
 
-        .nav-link:hover {
-            opacity: 0.7;
-        }
+    nav a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: opacity 0.2s ease;
+    }
 
-        /* Main Content Container / Pages */
-        .page-section {
-            display: none;
-            width: 100%;
-        }
+    nav a:hover {
+      opacity: 0.8;
+    }
 
-        .page-section.active {
-            display: block;
-        }
+    /* Hero Section */
+    .hero-section {
+      min-height: 100vh;
+      background-color: #5E99C2;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 4rem 6rem 4rem;
+    }
 
-        /* Hero / Home Section */
-        .hero-section {
-            padding: 120px 60px 80px 60px;
-            max-width: 1400px;
-        }
+    .hero-title {
+      font-size: clamp(3.2rem, 7.5vw, 6.8rem);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.03em;
+      color: #ffffff;
+      max-width: 1200px;
+    }
 
-        .hero-headline {
-            font-size: clamp(3rem, 6vw, 6.5rem);
-            font-weight: 700;
-            line-height: 1.02;
-            letter-spacing: -0.03em;
-            color: #FFFFFF;
-            max-width: 1000px;
-        }
+    /* About Section */
+    .about-section {
+      background-color: #ffffff;
+      color: #5E99C2;
+      padding: 8rem 4rem;
+      min-height: 100vh;
+    }
 
-        /* Generic Content Sections for other pages */
-        .content-container {
-            padding: 80px 60px;
-            max-width: 1000px;
-        }
+    .about-container {
+      max-width: 1000px;
+    }
 
-        .section-title {
-            font-size: clamp(2.5rem, 4vw, 4rem);
-            font-weight: 700;
-            margin-bottom: 24px;
-            letter-spacing: -0.02em;
-        }
+    .about-heading {
+      font-size: clamp(2.2rem, 4vw, 3.8rem);
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.02em;
+    }
 
-        .section-body {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            font-weight: 400;
-            opacity: 0.95;
-            max-width: 700px;
-        }
+    .about-text {
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.7;
+      margin-bottom: 2rem;
+      max-width: 650px;
+      opacity: 0.9;
+    }
 
-        @media (max-width: 768px) {
-            .navbar {
-                padding: 24px 20px;
-            }
-            .hero-section, .content-container {
-                padding: 60px 20px 40px 20px;
-            }
-            .nav-links {
-                gap: 20px;
-            }
-        }
-    </style>
+    /* Headshot Area */
+    .headshot-space {
+      width: 260px;
+      height: 320px;
+      border-radius: 28px;
+      margin-top: 3.5rem;
+      overflow: hidden;
+      background-color: #e2e8f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px dashed #a0aec0;
+      color: #718096;
+      font-weight: 600;
+      font-size: 0.95rem;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .headshot-space img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Services Section */
+    .services-section {
+      background-color: #5E99C2;
+      color: #ffffff;
+      padding: 8rem 4rem;
+    }
+
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 2.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .services-intro {
+      font-size: 1.25rem;
+      font-weight: 600;
+      max-width: 900px;
+      margin-bottom: 4rem;
+      line-height: 1.5;
+    }
+
+    .service-item {
+      border-top: 1px solid rgba(255, 255, 255, 0.6);
+      padding: 2.5rem 0;
+      position: relative;
+    }
+
+    .service-item:last-child {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    }
+
+    .service-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .service-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      font-style: italic;
+    }
+
+    .service-dash {
+      font-size: 1.5rem;
+      font-weight: 300;
+      opacity: 0.8;
+    }
+
+    .service-description {
+      font-size: 1.15rem;
+      font-weight: 500;
+      max-width: 800px;
+      line-height: 1.6;
+      opacity: 0.95;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      background-color: #000000;
+      color: #5E99C2;
+      padding: 8rem 4rem;
+      min-height: 100vh;
+      display: flex;
+      justify-content: space-between;
+      gap: 4rem;
+    }
+
+    .contact-form-container {
+      flex: 1;
+      max-width: 650px;
+    }
+
+    .contact-sidebar {
+      width: 300px;
+      text-align: right;
+    }
+
+    .contact-sidebar h2 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #5E99C2;
+      letter-spacing: -0.02em;
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
+
+    .form-group.half {
+      margin-bottom: 0;
+    }
+
+    label {
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: #5E99C2;
+      margin-bottom: 0.6rem;
+    }
+
+    label .required {
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    select,
+    textarea {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #5E99C2;
+      color: #ffffff;
+      padding: 1rem 1.2rem;
+      font-family: inherit;
+      font-size: 1.05rem;
+      outline: none;
+      border-radius: 0;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    select {
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%235E99C2' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      padding-right: 2.5rem;
+    }
+
+    select option {
+      background-color: #000000;
+      color: #ffffff;
+    }
+
+    textarea {
+      min-height: 180px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      border-color: #ffffff;
+    }
+
+    .submit-btn {
+      background: transparent;
+      color: #ffffff;
+      border: 1px solid #5E99C2;
+      padding: 1.1rem 3rem;
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.2s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: #5E99C2;
+      color: #000000;
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 900px) {
+      header {
+        padding: 1.5rem 2rem;
+      }
+
+      .hero-section,
+      .about-section,
+      .services-section,
+      .contact-section {
+        padding: 6rem 2rem;
+      }
+
+      .contact-section {
+        flex-direction: column-reverse;
+        gap: 2rem;
+      }
+
+      .contact-sidebar {
+        width: 100%;
+        text-align: left;
+      }
+
+      .form-row {
+        flex-direction: column;
+        gap: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <a onclick="showPage('home')" class="brand-logo">Ally Rossi</a>
-        <nav class="nav-links">
-            <a onclick="showPage('about')" class="nav-link">about</a>
-            <a onclick="showPage('services')" class="nav-link">services</a>
-            <a onclick="showPage('contact')" class="nav-link">contact</a>
-        </nav>
-    </header>
+  <!-- Navigation -->
+  <header>
+    <a href="#" class="brand">Ally Rossi</a>
+    <nav>
+      <a href="#about">about</a>
+      <a href="#services">services</a>
+      <a href="#contact">contact</a>
+    </nav>
+  </header>
 
-    <!-- HOME PAGE VIEW -->
-    <main id="home" class="page-section active">
-        <section class="hero-section">
-            <h1 class="hero-headline">
-                Web Design<br>that fits your business.
-            </h1>
-        </section>
-    </main>
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1 class="hero-title">Web Design<br>that fits your business.</h1>
+  </section>
 
-    <!-- ABOUT PAGE VIEW -->
-    <section id="about" class="page-section">
-        <div class="content-container">
-            <h2 class="section-title">About</h2>
-            <p class="section-body">
-                I'm Ally Rossi—a freelance web designer focused on building sleek, high-performing websites tailored to your brand.
-            </p>
+  <!-- About Section -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <h2 class="about-heading">hi, I’m Ally! I develop websites for small businesses and entrepreneurs.</h2>
+      
+      <p class="about-text">
+        By leveraging platforms like Squarespace and Shopify alongside custom HTML and CSS, I build SEO-optimized sites that function seamlessly and engage your audience.
+      </p>
+      
+      <p class="about-text">
+        I’m based in Portland, OR, and would love to help bring your online presence to life.
+      </p>
+
+      <!-- Headshot Placeholder (Replace with your <img> tag when ready) -->
+      <div class="headshot-space">
+        <!-- <img src="your-photo.jpg" alt="Ally Rossi"> -->
+        Headshot Space
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="services-section">
+    <h2 class="section-title">services</h2>
+    <p class="services-intro">Each build is completely custom. Please contact me directly for pricing, as it depends on the scope of your project.</p>
+
+    <div class="service-item">
+      <div class="service-header">
+        <h3 class="service-name">Landing Page</h3>
+        <span class="service-dash">—</span>
+      </div>
+      <p class="service-description">
+        A single page designed for events and specific promotional campaigns. It includes custom design, professional copy, and a custom domain setup.
+      </p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-header">
+        <h3 class="service-name">Full Website Design</h3>
+        <span class="service-dash">—</span>
+      </div>
+      <p class="service-description">
+        A multi-page website designed to showcase your expertise and elevate your brand. I combine clean design with a strategic layout so visitors can instantly trust what you offer.
+      </p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-header">
+        <h3 class="service-name">Website Audit</h3>
+        <span class="service-dash">—</span>
+      </div>
+      <p class="service-description">
+        A comprehensive review of your site’s design, structure, and user experience. You’ll receive an actionable roadmap detailing immediate fixes, structural improvements, and practical recommendations to boost your site’s usability.
+      </p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-header">
+        <h3 class="service-name">Content Updates</h3>
+        <span class="service-dash">—</span>
+      </div>
+      <p class="service-description">
+        Ongoing design and copy maintenance to keep your site fresh, accurate, and aligned with your goals. Perfect for updating portfolio pieces, adding product listings, refreshing messaging, or tweaking design layouts as your business evolves.
+      </p>
+    </div>
+
+    <div class="service-item">
+      <div class="service-header">
+        <h3 class="service-name">Logo Design</h3>
+        <span class="service-dash">—</span>
+      </div>
+      <p class="service-description">
+        A custom logo designed to anchor your brand identity across your website and social profiles.
+      </p>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-form-container">
+      <form action="https://formspree.io/f/your-form-id" method="POST">
+        
+        <div class="form-row">
+          <div class="form-group half">
+            <label for="first-name">First Name <span class="required">(required)</span></label>
+            <input type="text" id="first-name" name="first_name" required>
+          </div>
+          <div class="form-group half">
+            <label for="last-name">Last Name <span class="required">(required)</span></label>
+            <input type="text" id="last-name" name="last_name" required>
+          </div>
         </div>
-    </section>
 
-    <!-- SERVICES PAGE VIEW -->
-    <section id="services" class="page-section">
-        <div class="content-container">
-            <h2 class="section-title">Services</h2>
-            <p class="section-body">
-                Specializing in clean web design, custom layouts, and digital experiences built for impact.
-            </p>
+        <div class="form-group">
+          <label for="email">Email <span class="required">(required)</span></label>
+          <input type="email" id="email" name="email" required>
         </div>
-    </section>
 
-    <!-- CONTACT PAGE VIEW -->
-    <section id="contact" class="page-section">
-        <div class="content-container">
-            <h2 class="section-title">Contact</h2>
-            <p class="section-body">
-                Ready to start a project or need a site audit? Reach out and let's build something great together.
-            </p>
+        <div class="form-group">
+          <label for="service-type">Service Type <span class="required">(required)</span></label>
+          <select id="service-type" name="service_type" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="Landing Page">Landing Page</option>
+            <option value="Full Website Design">Full Website Design</option>
+            <option value="Website Audit">Website Audit</option>
+            <option value="Content Updates">Content Updates</option>
+            <option value="Logo Design">Logo Design</option>
+          </select>
         </div>
-    </section>
 
-    <script>
-        function showPage(pageId) {
-            // Hide all sections
-            const sections = document.querySelectorAll('.page-section');
-            sections.forEach(sec => sec.classList.remove('active'));
+        <div class="form-group">
+          <label for="timeline">Project Timeline <span class="required">(required)</span></label>
+          <select id="timeline" name="timeline" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="ASAP">ASAP (1-2 weeks)</option>
+            <option value="1 Month">Within 1 Month</option>
+            <option value="1-3 Months">1 - 3 Months</option>
+            <option value="Flexible">Flexible</option>
+          </select>
+        </div>
 
-            // Show selected section
-            const target = document.getElementById(pageId);
-            if (target) {
-                target.classList.add('active');
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-        }
-    </script>
+        <div class="form-group">
+          <label for="budget">Budget Range</label>
+          <select id="budget" name="budget">
+            <option value="" disabled selected>Select an option</option>
+            <option value="Under $1k">Under $1,000</option>
+            <option value="$1k - $2.5k">$1,000 - $2,500</option>
+            <option value="$2.5k - $5k">$2,500 - $5,000</option>
+            <option value="$5k+">$5,000+</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message <span class="required">(required)</span></label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">SUBMIT</button>
+      </form>
+    </div>
+
+    <div class="contact-sidebar">
+      <h2>contact</h2>
+    </div>
+  </section>
+
 </body>
 </html>
