@@ -54,13 +54,24 @@
             color: #FFFFFF;
             text-decoration: none;
             transition: opacity 0.2s ease;
+            cursor: pointer;
         }
 
         .nav-link:hover {
             opacity: 0.7;
         }
 
-        /* Hero Section */
+        /* Main Content Container / Pages */
+        .page-section {
+            display: none;
+            width: 100%;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        /* Hero / Home Section */
         .hero-section {
             padding: 120px 60px 80px 60px;
             max-width: 1400px;
@@ -75,11 +86,32 @@
             max-width: 1000px;
         }
 
+        /* Generic Content Sections for other pages */
+        .content-container {
+            padding: 80px 60px;
+            max-width: 1000px;
+        }
+
+        .section-title {
+            font-size: clamp(2.5rem, 4vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 24px;
+            letter-spacing: -0.02em;
+        }
+
+        .section-body {
+            font-size: 1.25rem;
+            line-height: 1.6;
+            font-weight: 400;
+            opacity: 0.95;
+            max-width: 700px;
+        }
+
         @media (max-width: 768px) {
             .navbar {
                 padding: 24px 20px;
             }
-            .hero-section {
+            .hero-section, .content-container {
                 padding: 60px 20px 40px 20px;
             }
             .nav-links {
@@ -92,20 +124,66 @@
 
     <!-- NAVBAR -->
     <header class="navbar">
-        <a href="#" class="brand-logo">Ally Rossi</a>
+        <a onclick="showPage('home')" class="brand-logo">Ally Rossi</a>
         <nav class="nav-links">
-            <a href="#about" class="nav-link">about</a>
-            <a href="#services" class="nav-link">services</a>
-            <a href="#contact" class="nav-link">contact</a>
+            <a onclick="showPage('about')" class="nav-link">about</a>
+            <a onclick="showPage('services')" class="nav-link">services</a>
+            <a onclick="showPage('contact')" class="nav-link">contact</a>
         </nav>
     </header>
 
-    <!-- HERO SECTION -->
-    <main class="hero-section">
-        <h1 class="hero-headline">
-            Web Design<br>that fits your business.
-        </h1>
+    <!-- HOME PAGE VIEW -->
+    <main id="home" class="page-section active">
+        <section class="hero-section">
+            <h1 class="hero-headline">
+                Web Design<br>that fits your business.
+            </h1>
+        </section>
     </main>
 
+    <!-- ABOUT PAGE VIEW -->
+    <section id="about" class="page-section">
+        <div class="content-container">
+            <h2 class="section-title">About</h2>
+            <p class="section-body">
+                I'm Ally Rossi—a freelance web designer focused on building sleek, high-performing websites tailored to your brand.
+            </p>
+        </div>
+    </section>
+
+    <!-- SERVICES PAGE VIEW -->
+    <section id="services" class="page-section">
+        <div class="content-container">
+            <h2 class="section-title">Services</h2>
+            <p class="section-body">
+                Specializing in clean web design, custom layouts, and digital experiences built for impact.
+            </p>
+        </div>
+    </section>
+
+    <!-- CONTACT PAGE VIEW -->
+    <section id="contact" class="page-section">
+        <div class="content-container">
+            <h2 class="section-title">Contact</h2>
+            <p class="section-body">
+                Ready to start a project or need a site audit? Reach out and let's build something great together.
+            </p>
+        </div>
+    </section>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.remove('active'));
+
+            // Show selected section
+            const target = document.getElementById(pageId);
+            if (target) {
+                target.classList.add('active');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        }
+    </script>
 </body>
 </html>
