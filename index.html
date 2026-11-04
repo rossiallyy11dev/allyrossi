@@ -352,7 +352,7 @@
 
     /* RESPONSIVE BREAKPOINTS */
 
-    /* Large Tablets (992px to 1199px) */
+    /* Large Tablets & Small Tablets (768px to 1199px) */
     @media (max-width: 1199px) {
       header {
         padding: 2rem 3rem;
@@ -362,7 +362,8 @@
       .about-section,
       .services-section,
       .contact-section {
-        padding: 6rem 3rem;
+        padding: 4rem 3rem; /* Uniform section padding */
+        min-height: auto;   /* Removes unwanted excess height */
       }
 
       .contact-section {
@@ -370,7 +371,7 @@
       }
     }
 
-    /* Small Tablets (768px to 991px) */
+    /* Small Tablets Specific Adjustments (768px to 991px) */
     @media (max-width: 991px) {
       header {
         padding: 1.75rem 2.5rem;
@@ -380,7 +381,7 @@
       .about-section,
       .services-section,
       .contact-section {
-        padding: 5rem 2.5rem;
+        padding: 4rem 2.5rem; /* Uniform section padding */
       }
 
       .contact-section {
@@ -473,7 +474,7 @@
 
       .about-text {
         font-size: 1.05rem;
-        margin-bottom: 1rem; /* Reduced bottom spacing of text to pull box up */
+        margin-bottom: 1rem;
       }
 
       /* Hide the line break on mobile */
