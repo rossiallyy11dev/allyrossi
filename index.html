@@ -149,6 +149,11 @@
       opacity: 0.9;
     }
 
+    /* Control Line Break: Desktop Only */
+    .desktop-only-break {
+      display: inline;
+    }
+
     /* Headshot Area */
     .headshot-space {
       width: 260px;
@@ -462,6 +467,11 @@
         font-size: 1.05rem;
       }
 
+      /* Hide the line break on mobile */
+      .desktop-only-break {
+        display: none;
+      }
+
       .headshot-space {
         width: 100%;
         max-width: 260px;
@@ -533,7 +543,7 @@
       </p>
       
       <p class="about-text">
-        I’m based in Portland, OR, and would love to help bring your online presence to life.
+        I’m based in Portland, OR, and would love to help bring your<br class="desktop-only-break">online presence to life.
       </p>
 
       <!-- Headshot Placeholder -->
