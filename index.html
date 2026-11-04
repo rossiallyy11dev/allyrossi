@@ -154,7 +154,7 @@
       display: inline;
     }
 
-    /* Headshot Area (Updated to Square) */
+    /* Headshot Area (Square Container) */
     .headshot-space {
       width: 340px;
       height: 340px;
@@ -166,6 +166,13 @@
       align-items: center;
       justify-content: center;
       border: none;
+    }
+
+    .headshot-space img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
     }
 
     /* Services Section & Accordion */
@@ -572,8 +579,10 @@
         I’m based in Portland, OR, and would love to help bring your <br class="desktop-only-break">online presence to life.
       </p>
 
-      <!-- Headshot Area (Square Placeholder) -->
-      <div class="headshot-space"></div>
+      <!-- Headshot Area -->
+      <div class="headshot-space">
+        <img src="Ally Rossi Headshot.png" alt="Ally Rossi Headshot">
+      </div>
     </div>
   </section>
 
