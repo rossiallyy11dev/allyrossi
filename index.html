@@ -175,7 +175,7 @@
       display: block;
     }
 
-    /* Services Section */
+    /* Services Section & Accordion */
     .services-section {
       background-color: #5E99C2;
       color: #ffffff;
@@ -201,6 +201,7 @@
       border-top: 1px solid rgba(255, 255, 255, 0.6);
       padding: 2.5rem 0;
       position: relative;
+      cursor: pointer;
     }
 
     .service-item:last-child {
@@ -211,7 +212,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 1.2rem;
+      user-select: none;
     }
 
     .service-name {
@@ -224,6 +225,25 @@
       font-size: 1.5rem;
       font-weight: 300;
       opacity: 0.8;
+      transition: transform 0.3s ease;
+      display: inline-block;
+    }
+
+    /* Accordion Toggle State */
+    .service-item.active .service-dash {
+      transform: rotate(45deg);
+    }
+
+    .service-content-wrapper {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease-out, margin-top 0.35s ease-out;
+    }
+
+    .service-item.active .service-content-wrapper {
+      max-height: 300px; /* Adjust if description is longer */
+      margin-top: 1.2rem;
+      transition: max-height 0.35s ease-in, margin-top 0.35s ease-in;
     }
 
     .service-description {
@@ -583,9 +603,11 @@
         <h3 class="service-name">Landing Page</h3>
         <span class="service-dash">—</span>
       </div>
-      <p class="service-description">
-        A single page designed for events and specific promotional campaigns. It includes custom design, professional copy, and a custom domain setup.
-      </p>
+      <div class="service-content-wrapper">
+        <p class="service-description">
+          A single page designed for events and specific promotional campaigns. It includes custom design, professional copy, and a custom domain setup.
+        </p>
+      </div>
     </div>
 
     <div class="service-item">
@@ -593,9 +615,11 @@
         <h3 class="service-name">Full Website Design</h3>
         <span class="service-dash">—</span>
       </div>
-      <p class="service-description">
-        A multi-page website designed to showcase your expertise and elevate your brand. I combine clean design with a strategic layout so visitors can instantly trust what you offer.
-      </p>
+      <div class="service-content-wrapper">
+        <p class="service-description">
+          A multi-page website designed to showcase your expertise and elevate your brand. I combine clean design with a strategic layout so visitors can instantly trust what you offer.
+        </p>
+      </div>
     </div>
 
     <div class="service-item">
@@ -603,9 +627,11 @@
         <h3 class="service-name">Website Audit</h3>
         <span class="service-dash">—</span>
       </div>
-      <p class="service-description">
-        A comprehensive review of your site’s design, structure, and user experience. You’ll receive an actionable roadmap detailing immediate fixes, structural improvements, and practical recommendations to boost your site’s usability.
-      </p>
+      <div class="service-content-wrapper">
+        <p class="service-description">
+          A comprehensive review of your site’s design, structure, and user experience. You’ll receive an actionable roadmap detailing immediate fixes, structural improvements, and practical recommendations to boost your site’s usability.
+        </p>
+      </div>
     </div>
 
     <div class="service-item">
@@ -613,9 +639,11 @@
         <h3 class="service-name">Content Updates</h3>
         <span class="service-dash">—</span>
       </div>
-      <p class="service-description">
-        Ongoing design and copy maintenance to keep your site fresh, accurate, and aligned with your goals. Perfect for updating portfolio pieces, adding product listings, refreshing messaging, or tweaking design layouts as your business evolves.
-      </p>
+      <div class="service-content-wrapper">
+        <p class="service-description">
+          Ongoing design and copy maintenance to keep your site fresh, accurate, and aligned with your goals. Perfect for updating portfolio pieces, adding product listings, refreshing messaging, or tweaking design layouts as your business evolves.
+        </p>
+      </div>
     </div>
 
     <div class="service-item">
@@ -623,9 +651,11 @@
         <h3 class="service-name">Logo Design</h3>
         <span class="service-dash">—</span>
       </div>
-      <p class="service-description">
-        A custom logo designed to anchor your brand identity across your website and social profiles.
-      </p>
+      <div class="service-content-wrapper">
+        <p class="service-description">
+          A custom logo designed to anchor your brand identity across your website and social profiles.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -698,7 +728,7 @@
     </div>
   </section>
 
-  <!-- JavaScript for Hamburger Menu -->
+  <!-- JavaScript for Accordion & Hamburger Menu -->
   <script>
     const menuToggle = id => document.getElementById(id);
     const toggleBtn = menuToggle('mobile-menu');
@@ -714,6 +744,13 @@
       link.addEventListener('click', () => {
         toggleBtn.classList.remove('active');
         navLinks.classList.remove('active');
+      });
+    });
+
+    // Accordion Functionality for Services
+    document.querySelectorAll('.service-item').forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('active');
       });
     });
   </script>
