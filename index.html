@@ -252,8 +252,7 @@
     .contact-section {
       background-color: #000000;
       color: #5699CA;
-      padding: 4.5rem 2.5rem;
-      min-height: 100vh;
+      padding: 4.5rem 2.5rem 2rem 2.5rem;
       display: flex;
       justify-content: space-between;
       gap: 4rem;
@@ -369,6 +368,61 @@
       color: #000000;
     }
 
+    /* Footer Styles */
+    site-footer {
+      background-color: #000000;
+      padding: 0 2.5rem 4rem 2.5rem;
+    }
+
+    .footer-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.4);
+      margin: 0 2.5rem 3rem 2.5rem;
+    }
+
+    .footer-content {
+      background-color: #000000;
+      padding: 0 2.5rem 4rem 2.5rem;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+    }
+
+    .footer-inner {
+      text-align: right;
+    }
+
+    .footer-name {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .footer-links a {
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 400;
+      border-bottom: 1px solid #ffffff;
+      padding-bottom: 1px;
+      display: inline-block;
+      width: fit-content;
+      margin-left: auto;
+      transition: opacity 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      opacity: 0.8;
+    }
+
     /* RESPONSIVE BREAKPOINTS */
 
     /* Large Tablets (992px to 1199px) */
@@ -390,6 +444,14 @@
 
       .contact-section {
         gap: 2.5rem;
+      }
+
+      .footer-divider {
+        margin: 0 3rem 3rem 3rem;
+      }
+
+      .footer-content {
+        padding: 0 3rem 4rem 3rem;
       }
     }
 
@@ -421,6 +483,14 @@
 
       .contact-sidebar h2 {
         font-size: 2.4rem;
+      }
+
+      .footer-divider {
+        margin: 0 2.5rem 3rem 2.5rem;
+      }
+
+      .footer-content {
+        padding: 0 2.5rem 4rem 2.5rem;
       }
     }
 
@@ -546,6 +616,14 @@
       .submit-btn {
         width: 100%;
         text-align: center;
+      }
+
+      .footer-divider {
+        margin: 0 1.5rem 2.5rem 1.5rem;
+      }
+
+      .footer-content {
+        padding: 0 1.5rem 3rem 1.5rem;
       }
     }
   </style>
@@ -723,6 +801,18 @@
       <h2>contact</h2>
     </div>
   </section>
+
+  <!-- Footer Section -->
+  <hr class="footer-divider">
+  <footer class="footer-content">
+    <div class="footer-inner">
+      <h3 class="footer-name">Ally Rossi</h3>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/allyrossi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="mailto:rossially11@gmail.com">Email</a>
+      </div>
+    </div>
+  </footer>
 
   <!-- JavaScript for Accordion & Hamburger Menu -->
   <script>
