@@ -30,7 +30,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation Bar */
+    /* Base Layout & Desktop Defaults (1200px+) */
     header {
       position: fixed;
       top: 0;
@@ -316,22 +316,51 @@
       color: #000000;
     }
 
-    /* Responsive Adjustments */
-    @media (max-width: 900px) {
+    /* RESPONSIVE BREAKPOINTS */
+
+    /* Large Tablets & Small Desktops (992px to 1199px) */
+    @media (max-width: 1199px) {
       header {
-        padding: 1.5rem 2rem;
+        padding: 2rem 3rem;
       }
 
       .hero-section,
       .about-section,
       .services-section,
       .contact-section {
-        padding: 6rem 2rem;
+        padding: 6rem 3rem;
+      }
+
+      .contact-section {
+        gap: 2.5rem;
+      }
+    }
+
+    /* Small Tablets & Portrait Mode (768px to 991px) */
+    @media (max-width: 991px) {
+      header {
+        padding: 1.75rem 2.5rem;
+      }
+
+      nav {
+        gap: 1.75rem;
+      }
+
+      .hero-section,
+      .about-section,
+      .services-section,
+      .contact-section {
+        padding: 5rem 2.5rem;
+      }
+
+      .about-section,
+      .contact-section {
+        min-height: auto;
       }
 
       .contact-section {
         flex-direction: column-reverse;
-        gap: 2rem;
+        gap: 3rem;
       }
 
       .contact-sidebar {
@@ -339,9 +368,84 @@
         text-align: left;
       }
 
+      .contact-sidebar h2 {
+        font-size: 2.4rem;
+      }
+    }
+
+    /* Mobile Devices (Up to 767px) */
+    @media (max-width: 767px) {
+      header {
+        padding: 1.25rem 1.5rem;
+      }
+
+      .brand {
+        font-size: 1.25rem;
+      }
+
+      nav {
+        gap: 1.25rem;
+      }
+
+      nav a {
+        font-size: 0.95rem;
+      }
+
+      .hero-section {
+        padding: 0 1.5rem 4rem 1.5rem;
+        min-height: 80vh;
+      }
+
+      .about-section,
+      .services-section,
+      .contact-section {
+        padding: 4rem 1.5rem;
+      }
+
+      .about-heading {
+        margin-bottom: 1.75rem;
+      }
+
+      .about-text {
+        font-size: 1.05rem;
+      }
+
+      .headshot-space {
+        width: 100%;
+        max-width: 260px;
+        height: 300px;
+        margin-top: 2.5rem;
+      }
+
+      .services-intro {
+        font-size: 1.1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      .service-item {
+        padding: 1.75rem 0;
+      }
+
+      .service-name {
+        font-size: 1.3rem;
+      }
+
+      .service-description {
+        font-size: 1rem;
+      }
+
       .form-row {
         flex-direction: column;
-        gap: 2rem;
+        gap: 0;
+      }
+
+      .form-group.half {
+        margin-bottom: 2rem;
+      }
+
+      .submit-btn {
+        width: 100%;
+        text-align: center;
       }
     }
   </style>
@@ -376,7 +480,7 @@
         I’m based in Portland, OR, and would love to help bring your online presence to life.
       </p>
 
-      <!-- Headshot Placeholder (Replace with your <img> tag when ready) -->
+      <!-- Headshot Placeholder -->
       <div class="headshot-space">
         <!-- <img src="your-photo.jpg" alt="Ally Rossi"> -->
         Headshot Space
