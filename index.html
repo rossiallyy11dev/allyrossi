@@ -352,18 +352,21 @@
 
     /* RESPONSIVE BREAKPOINTS */
 
-    /* Large Tablets & Small Tablets (768px to 1199px) */
+    /* Large Tablets (992px to 1199px) */
     @media (max-width: 1199px) {
       header {
         padding: 2rem 3rem;
       }
 
-      .hero-section,
+      .hero-section {
+        padding: 0 3rem 5rem 3rem;
+      }
+
       .about-section,
       .services-section,
       .contact-section {
-        padding: 4rem 3rem; /* Uniform section padding */
-        min-height: auto;   /* Removes unwanted excess height */
+        padding: 4rem 3rem;
+        min-height: auto;
       }
 
       .contact-section {
@@ -371,17 +374,20 @@
       }
     }
 
-    /* Small Tablets Specific Adjustments (768px to 991px) */
+    /* Small Tablets (768px to 991px) */
     @media (max-width: 991px) {
       header {
         padding: 1.75rem 2.5rem;
       }
 
-      .hero-section,
+      .hero-section {
+        padding: 0 2.5rem 4rem 2.5rem;
+      }
+
       .about-section,
       .services-section,
       .contact-section {
-        padding: 4rem 2.5rem; /* Uniform section padding */
+        padding: 4rem 2.5rem;
       }
 
       .contact-section {
