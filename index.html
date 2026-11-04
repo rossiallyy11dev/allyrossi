@@ -322,7 +322,8 @@
       -webkit-appearance: none;
     }
 
-    /* Ensure unselected dropdown placeholder matches the #5699CA blue shade */
+    /* Style placeholder option text blue across all selects when default option is selected */
+    select:has(option[value=""]:checked),
     select:invalid {
       color: #5699CA;
     }
