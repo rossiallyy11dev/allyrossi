@@ -30,7 +30,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Navigation Bar - Stagnant (Absolute) */
+    /* Navigation Bar - Desktop Tight Margins */
     header {
       position: absolute;
       top: 0;
@@ -39,14 +39,14 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 2.5rem 4rem;
+      padding: 1.8rem 3.5rem;
       z-index: 1000;
       background: transparent;
     }
 
     .brand {
-      font-size: 1.5rem;
-      font-weight: 650;
+      font-size: 1.4rem;
+      font-weight: 600;
       color: #ffffff;
       text-decoration: none;
       letter-spacing: -0.02em;
@@ -54,14 +54,14 @@
 
     .nav-links {
       display: flex;
-      gap: 2.5rem;
+      gap: 2.2rem;
     }
 
     .nav-links a {
       color: #ffffff;
       text-decoration: none;
-      font-size: 1.1rem;
-      font-weight: 430;
+      font-size: 1.05rem;
+      font-weight: 400;
       transition: opacity 0.2s ease;
     }
 
@@ -100,41 +100,41 @@
       transform: translateY(-5px) rotate(-45deg);
     }
 
-    /* Hero Section */
+    /* Hero Section - Matching Old Site Spacing */
     .hero-section {
       min-height: 100vh;
       min-height: 100dvh;
       background-color: #5E99C2;
       display: flex;
       align-items: flex-end;
-      padding: 0 4rem 6rem 4rem;
+      padding: 0 3.5rem 2.8rem 3.5rem;
       position: relative;
     }
 
     .hero-title {
-      font-size: clamp(3.2rem, 7.5vw, 6.8rem);
-      font-weight: 650;
-      line-height: 1.05;
-      letter-spacing: -0.03em;
+      font-size: clamp(2.8rem, 4.8vw, 4.8rem);
+      font-weight: 600;
+      line-height: 1.08;
+      letter-spacing: -0.02em;
       color: #ffffff;
       max-width: 1200px;
     }
 
-    /* About Section (Desktop Padding: 6rem) */
+    /* About Section */
     .about-section {
       background-color: #ffffff;
       color: #5E99C2;
-      padding: 6rem 4rem;
+      padding: 5rem 3.5rem;
       min-height: 100vh;
     }
 
     .about-container {
-      max-width: 1000px;
+      max-width: 1100px;
     }
 
     .about-heading {
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
-      font-weight: 800;
+      font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+      font-weight: 700;
       line-height: 1.2;
       margin-bottom: 2.5rem;
       letter-spacing: -0.02em;
@@ -142,7 +142,7 @@
 
     .about-text {
       font-size: 1.2rem;
-      font-weight: 500;
+      font-weight: 400;
       line-height: 1.7;
       margin-bottom: 2rem;
       max-width: 650px;
@@ -154,7 +154,7 @@
       display: inline;
     }
 
-    /* Headshot Area (Desktop: Larger size) */
+    /* Headshot Area */
     .headshot-space {
       width: 320px;
       height: 390px;
@@ -175,31 +175,31 @@
       display: block;
     }
 
-    /* Services Section & Accordion (Desktop Padding: 6rem) */
+    /* Services Section & Accordion */
     .services-section {
       background-color: #5E99C2;
       color: #ffffff;
-      padding: 6rem 4rem;
+      padding: 5rem 3.5rem;
     }
 
     .section-title {
       font-size: 2.2rem;
-      font-weight: 800;
+      font-weight: 700;
       margin-bottom: 2.5rem;
       letter-spacing: -0.02em;
     }
 
     .services-intro {
-      font-size: 1.25rem;
-      font-weight: 600;
+      font-size: 1.2rem;
+      font-weight: 400;
       max-width: 900px;
-      margin-bottom: 4rem;
+      margin-bottom: 3.5rem;
       line-height: 1.5;
     }
 
     .service-item {
       border-top: 1px solid rgba(255, 255, 255, 0.6);
-      padding: 2.5rem 0;
+      padding: 2.2rem 0;
       position: relative;
       cursor: pointer;
     }
@@ -216,13 +216,13 @@
     }
 
     .service-name {
-      font-size: 1.5rem;
-      font-weight: 700;
+      font-size: 1.45rem;
+      font-weight: 600;
       font-style: italic;
     }
 
     .service-dash {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 300;
       opacity: 0.8;
       display: inline-block;
@@ -241,18 +241,18 @@
     }
 
     .service-description {
-      font-size: 1.15rem;
-      font-weight: 500;
+      font-size: 1.1rem;
+      font-weight: 400;
       max-width: 800px;
       line-height: 1.6;
       opacity: 0.95;
     }
 
-    /* Contact Section (Desktop Padding: 6rem) */
+    /* Contact Section */
     .contact-section {
       background-color: #000000;
       color: #5E99C2;
-      padding: 6rem 4rem;
+      padding: 5rem 3.5rem;
       min-height: 100vh;
       display: flex;
       justify-content: space-between;
@@ -271,7 +271,7 @@
 
     .contact-sidebar h2 {
       font-size: 2.8rem;
-      font-weight: 800;
+      font-weight: 700;
       color: #5E99C2;
       letter-spacing: -0.02em;
     }
@@ -295,7 +295,7 @@
 
     label {
       font-size: 1.05rem;
-      font-weight: 600;
+      font-weight: 500;
       color: #5E99C2;
       margin-bottom: 0.6rem;
     }
@@ -350,7 +350,7 @@
       padding: 1.1rem 3rem;
       font-family: inherit;
       font-size: 1.05rem;
-      font-weight: 700;
+      font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       border-radius: 50px;
@@ -364,7 +364,7 @@
       color: #000000;
     }
 
-    /* RESPONSIVE BREAKPOINTS */
+    /* RESPONSIVE BREAKPOINTS (Tablets & Mobile untouched) */
 
     /* Large Tablets (992px to 1199px) */
     @media (max-width: 1199px) {
@@ -457,7 +457,7 @@
 
       .nav-links a {
         font-size: 1.8rem;
-        font-weight: 430;
+        font-weight: 400;
       }
 
       .hero-section {
