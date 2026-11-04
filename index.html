@@ -229,7 +229,7 @@
       display: inline-block;
     }
 
-    /* Accordion Toggle State */
+    /* Accordion Toggle State (+ rotates to form an x or close indicator) */
     .service-item.active .service-dash {
       transform: rotate(45deg);
     }
@@ -241,7 +241,7 @@
     }
 
     .service-item.active .service-content-wrapper {
-      max-height: 300px; /* Adjust if description is longer */
+      max-height: 300px;
       margin-top: 1.2rem;
       transition: max-height 0.35s ease-in, margin-top 0.35s ease-in;
     }
@@ -601,7 +601,7 @@
     <div class="service-item">
       <div class="service-header">
         <h3 class="service-name">Landing Page</h3>
-        <span class="service-dash">—</span>
+        <span class="service-dash">+</span>
       </div>
       <div class="service-content-wrapper">
         <p class="service-description">
@@ -613,7 +613,7 @@
     <div class="service-item">
       <div class="service-header">
         <h3 class="service-name">Full Website Design</h3>
-        <span class="service-dash">—</span>
+        <span class="service-dash">+</span>
       </div>
       <div class="service-content-wrapper">
         <p class="service-description">
@@ -625,7 +625,7 @@
     <div class="service-item">
       <div class="service-header">
         <h3 class="service-name">Website Audit</h3>
-        <span class="service-dash">—</span>
+        <span class="service-dash">+</span>
       </div>
       <div class="service-content-wrapper">
         <p class="service-description">
@@ -637,7 +637,7 @@
     <div class="service-item">
       <div class="service-header">
         <h3 class="service-name">Content Updates</h3>
-        <span class="service-dash">—</span>
+        <span class="service-dash">+</span>
       </div>
       <div class="service-content-wrapper">
         <p class="service-description">
@@ -649,7 +649,7 @@
     <div class="service-item">
       <div class="service-header">
         <h3 class="service-name">Logo Design</h3>
-        <span class="service-dash">—</span>
+        <span class="service-dash">+</span>
       </div>
       <div class="service-content-wrapper">
         <p class="service-description">
@@ -747,10 +747,20 @@
       });
     });
 
-    // Accordion Functionality for Services
+    // Single-Open Accordion Functionality for Services
     document.querySelectorAll('.service-item').forEach(item => {
       item.addEventListener('click', () => {
-        item.classList.toggle('active');
+        const isActive = item.classList.contains('active');
+        
+        // Close all items first
+        document.querySelectorAll('.service-item').forEach(el => {
+          el.classList.remove('active');
+        });
+
+        // If it wasn't active before, open it
+        if (!isActive) {
+          item.classList.add('active');
+        }
       });
     });
   </script>
