@@ -455,6 +455,18 @@
         padding: 4rem 1.5rem;
       }
 
+      .about-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+      }
+
+      .about-heading,
+      .about-text {
+        width: 100%;
+      }
+
       .about-heading {
         margin-bottom: 1.75rem;
       }
@@ -468,11 +480,15 @@
         display: none;
       }
 
-      /* Mobile: Center headshot horizontally at original size */
+      /* Mobile: Center headshot container & adjust inner crop alignment */
       .headshot-space {
         width: 260px;
         height: 300px;
-        margin: 2.5rem auto 0 auto;
+        margin: 2.5rem 0 0 0;
+      }
+
+      .headshot-space img {
+        object-position: 42% center;
       }
 
       .services-intro {
