@@ -30,7 +30,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Base Layout & Desktop Defaults (1200px+) */
+    /* Navigation Bar */
     header {
       position: fixed;
       top: 0;
@@ -52,12 +52,12 @@
       letter-spacing: -0.02em;
     }
 
-    nav {
+    .nav-links {
       display: flex;
       gap: 2.5rem;
     }
 
-    nav a {
+    .nav-links a {
       color: #ffffff;
       text-decoration: none;
       font-size: 1.1rem;
@@ -65,13 +65,45 @@
       transition: opacity 0.2s ease;
     }
 
-    nav a:hover {
+    .nav-links a:hover {
       opacity: 0.8;
+    }
+
+    /* Hamburger Button (Hidden on Desktop) */
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.5rem 0;
+      flex-direction: column;
+      justify-content: center;
+      gap: 8px;
+      z-index: 1001;
+      width: 32px;
+    }
+
+    .menu-toggle .bar {
+      width: 100%;
+      height: 2px;
+      background-color: #ffffff;
+      transition: all 0.3s ease;
+      display: block;
+    }
+
+    /* Active Hamburger X Animation */
+    .menu-toggle.active .bar:nth-child(1) {
+      transform: translateY(5px) rotate(45deg);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+      transform: translateY(-5px) rotate(-45deg);
     }
 
     /* Hero Section */
     .hero-section {
       min-height: 100vh;
+      min-height: 100dvh;
       background-color: #5E99C2;
       display: flex;
       align-items: flex-end;
@@ -318,7 +350,7 @@
 
     /* RESPONSIVE BREAKPOINTS */
 
-    /* Large Tablets & Small Desktops (992px to 1199px) */
+    /* Large Tablets (992px to 1199px) */
     @media (max-width: 1199px) {
       header {
         padding: 2rem 3rem;
@@ -336,14 +368,10 @@
       }
     }
 
-    /* Small Tablets & Portrait Mode (768px to 991px) */
+    /* Small Tablets (768px to 991px) */
     @media (max-width: 991px) {
       header {
         padding: 1.75rem 2.5rem;
-      }
-
-      nav {
-        gap: 1.75rem;
       }
 
       .hero-section,
@@ -351,11 +379,6 @@
       .services-section,
       .contact-section {
         padding: 5rem 2.5rem;
-      }
-
-      .about-section,
-      .contact-section {
-        min-height: auto;
       }
 
       .contact-section {
@@ -376,24 +399,53 @@
     /* Mobile Devices (Up to 767px) */
     @media (max-width: 767px) {
       header {
-        padding: 1.25rem 1.5rem;
+        padding: 1.5rem 1.5rem;
       }
 
       .brand {
         font-size: 1.25rem;
       }
 
-      nav {
-        gap: 1.25rem;
+      .menu-toggle {
+        display: flex;
       }
 
-      nav a {
-        font-size: 0.95rem;
+      .nav-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #5E99C2;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        z-index: 1000;
       }
 
+      .nav-links.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .nav-links a {
+        font-size: 1.8rem;
+        font-weight: 700;
+      }
+
+      /* Full Viewport Height Hero for Mobile */
       .hero-section {
-        padding: 0 1.5rem 4rem 1.5rem;
-        min-height: 80vh;
+        height: 100vh;
+        height: 100dvh;
+        padding: 0 1.5rem 3.5rem 1.5rem;
+      }
+
+      .hero-title {
+        font-size: clamp(2.8rem, 11vw, 4.2rem);
       }
 
       .about-section,
@@ -455,7 +507,11 @@
   <!-- Navigation -->
   <header>
     <a href="#" class="brand">Ally Rossi</a>
-    <nav>
+    <button class="menu-toggle" id="mobile-menu" aria-label="Toggle Navigation">
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
       <a href="#about">about</a>
       <a href="#services">services</a>
       <a href="#contact">contact</a>
@@ -612,6 +668,26 @@
       <h2>contact</h2>
     </div>
   </section>
+
+  <!-- JavaScript for Hamburger Menu -->
+  <script>
+    const menuToggle = id => document.getElementById(id);
+    const toggleBtn = menuToggle('mobile-menu');
+    const navLinks = menuToggle('nav-links');
+
+    toggleBtn.addEventListener('click', () => {
+      toggleBtn.classList.toggle('active');
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when a navigation link is clicked
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        toggleBtn.classList.remove('active');
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 
 </body>
 </html>
