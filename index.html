@@ -225,13 +225,7 @@
       font-size: 1.5rem;
       font-weight: 300;
       opacity: 0.8;
-      transition: transform 0.3s ease;
       display: inline-block;
-    }
-
-    /* Accordion Toggle State (+ rotates to form an x or close indicator) */
-    .service-item.active .service-dash {
-      transform: rotate(45deg);
     }
 
     .service-content-wrapper {
@@ -747,19 +741,21 @@
       });
     });
 
-    // Single-Open Accordion Functionality for Services
+    // Single-Open Accordion Functionality with + / - Swap
     document.querySelectorAll('.service-item').forEach(item => {
       item.addEventListener('click', () => {
         const isActive = item.classList.contains('active');
         
-        // Close all items first
+        // Reset all items to closed and set their symbols to '+'
         document.querySelectorAll('.service-item').forEach(el => {
           el.classList.remove('active');
+          el.querySelector('.service-dash').textContent = '+';
         });
 
-        // If it wasn't active before, open it
+        // If the clicked item wasn't active, open it and change its symbol to '-'
         if (!isActive) {
           item.classList.add('active');
+          item.querySelector('.service-dash').textContent = '-';
         }
       });
     });
