@@ -165,7 +165,22 @@
       line-height: 1.55;
       color: rgba(255, 255, 255, 0.94);
       max-width: 100%;
-      margin-bottom: 2.15rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .hero-rating {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 2rem;
+    }
+
+    .yellow-dot {
+      color: #FFD166;
+      font-weight: 800;
     }
 
     .hero-actions {
@@ -173,7 +188,7 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 1.4rem;
+      margin-bottom: 2.2rem;
     }
 
     .btn-hero-primary {
@@ -196,27 +211,6 @@
       background-color: #F4C95D;
       transform: translateY(-2px);
       box-shadow: none;
-    }
-
-    .hero-rating {
-      display: flex;
-      flex-direction: column;
-      gap: 0.2rem;
-      font-size: 0.95rem;
-      font-weight: 500;
-      color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 2.2rem;
-    }
-
-    .hero-status-line {
-      display: flex;
-      align-items: center;
-      gap: 0.45rem;
-    }
-
-    .yellow-dot {
-      color: #FFD166;
-      font-weight: 800;
     }
 
     .hero-trust-strip {
@@ -983,7 +977,7 @@
       }
 
       .hero-rating {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.75rem;
       }
 
       .hero-trust-strip {
@@ -1245,19 +1239,12 @@
           High-performing websites crafted for small businesses, creatives, and independent brands. Built to convert and easy to manage.
         </p>
 
-        <div class="hero-actions">
-          <a href="#contact" class="btn-hero-primary">Start a Project &rarr;</a>
+        <div class="hero-rating">
+          <span>Now booking new projects <span class="yellow-dot">&bull;</span> Based in Portland, OR</span>
         </div>
 
-        <div class="hero-rating">
-          <div class="hero-status-line">
-            <span class="yellow-dot">&bull;</span>
-            <span>Now booking new projects</span>
-          </div>
-          <div class="hero-status-line">
-            <span class="yellow-dot">&bull;</span>
-            <span>Based in Portland, Oregon</span>
-          </div>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-hero-primary">Start a Project &rarr;</a>
         </div>
 
         <div class="hero-trust-strip">
