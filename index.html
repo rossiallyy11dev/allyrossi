@@ -173,7 +173,7 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 1.35rem;
+      margin-bottom: 1.4rem;
     }
 
     .btn-hero-primary {
@@ -200,12 +200,18 @@
 
     .hero-rating {
       display: flex;
-      align-items: center;
-      gap: 0.45rem;
+      flex-direction: column;
+      gap: 0.2rem;
       font-size: 0.95rem;
       font-weight: 500;
       color: rgba(255, 255, 255, 0.95);
-      margin-bottom: 3.75rem;
+      margin-bottom: 2.2rem;
+    }
+
+    .hero-status-line {
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
     }
 
     .yellow-dot {
@@ -214,6 +220,7 @@
     }
 
     .hero-trust-strip {
+      margin-top: 2.2rem;
       display: flex;
       flex-direction: column;
       gap: 0.55rem;
@@ -310,7 +317,7 @@
       overflow: hidden;
     }
 
-    /* Mini Website Inside Browser */
+    /* Mini Website Inside Browser (Alder & Loom Studio) */
     .mini-nav {
       display: flex;
       justify-content: space-between;
@@ -976,7 +983,11 @@
       }
 
       .hero-rating {
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero-trust-strip {
+        margin-top: 1.5rem;
       }
 
       .hero-right {
@@ -1239,7 +1250,14 @@
         </div>
 
         <div class="hero-rating">
-          <span>Now booking new projects <span class="yellow-dot">&bull;</span> Based in Portland, OR</span>
+          <div class="hero-status-line">
+            <span class="yellow-dot">&bull;</span>
+            <span>Now booking new projects</span>
+          </div>
+          <div class="hero-status-line">
+            <span class="yellow-dot">&bull;</span>
+            <span>Based in Portland, Oregon</span>
+          </div>
         </div>
 
         <div class="hero-trust-strip">
@@ -1288,7 +1306,7 @@
           <span>SEO Optimized</span>
         </div>
 
-        <!-- Desktop Browser Frame -->
+        <!-- Desktop Browser Frame: Alder & Loom Studio (PNW Woven Textiles & Home Goods) -->
         <div class="browser-frame">
           <div class="browser-topbar">
             <span class="browser-dot"></span>
@@ -1302,11 +1320,11 @@
                 <span>Alder &amp; Loom</span>
               </div>
               <div class="mini-menu">
-                <span>Home</span>
-                <span>Services</span>
-                <span>Portfolio</span>
-                <span>Blog</span>
-                <span class="mini-menu-btn">Get in Touch</span>
+                <span>Shop</span>
+                <span>Textiles</span>
+                <span>Journal</span>
+                <span>Story</span>
+                <span class="mini-menu-btn">Visit Studio</span>
               </div>
             </div>
 
@@ -1314,76 +1332,83 @@
               <div>
                 <div class="mini-hero-title">ALDER &amp; LOOM<br>STUDIO</div>
                 <p class="mini-hero-copy">
-                  Thoughtful digital spaces crafted for modern brands, studios, and independent founders.
+                  Small-batch woven blankets, washed linen bedding, and stoneware crafted for calm everyday living.
                 </p>
                 <div class="mini-hero-btns">
-                  <span class="mini-btn-yellow">Start a Project</span>
-                  <span class="mini-btn-outline">View Work</span>
+                  <span class="mini-btn-yellow">Shop Collection</span>
+                  <span class="mini-btn-outline">Lookbook</span>
                 </div>
               </div>
 
               <div class="mini-collage">
+                <!-- Woven blanket & stripe illustration -->
                 <div class="mini-photo mini-collage-left">
                   <svg viewBox="0 0 120 140" preserveAspectRatio="xMidYMid slice">
-                    <rect width="120" height="140" fill="#DDD2C5"/>
-                    <rect x="14" y="18" width="92" height="122" fill="#EDE5DC"/>
-                    <rect x="52" y="18" width="44" height="90" fill="#B6C4CD"/>
-                    <circle cx="38" cy="96" r="14" fill="#9E7B62"/>
-                    <path d="M24 128 Q38 104 52 128 Z" fill="#FFD166"/>
+                    <rect width="120" height="140" fill="#E3D7C7"/>
+                    <rect x="14" y="14" width="92" height="112" rx="4" fill="#F4EDE3"/>
+                    <line x1="14" y1="36" x2="106" y2="36" stroke="#C79E6B" stroke-width="4"/>
+                    <line x1="14" y1="44" x2="106" y2="44" stroke="#7A8E82" stroke-width="2"/>
+                    <rect x="26" y="64" width="68" height="44" rx="3" fill="#E8D8BC"/>
+                    <circle cx="60" cy="86" r="12" fill="#FFD166"/>
                   </svg>
                 </div>
                 <div class="mini-collage-right">
+                  <!-- Linen swatch illustration -->
                   <div class="mini-photo">
                     <svg viewBox="0 0 120 65" preserveAspectRatio="xMidYMid slice">
-                      <rect width="120" height="65" fill="#E4D7C8"/>
-                      <rect x="20" y="12" width="48" height="40" fill="#FFD166" rx="2"/>
-                      <circle cx="88" cy="24" r="10" fill="#6F8274"/>
-                      <rect x="10" y="50" width="100" height="15" fill="#B59B84"/>
+                      <rect width="120" height="65" fill="#E6DACB"/>
+                      <rect x="12" y="10" width="46" height="45" rx="3" fill="#FFD166"/>
+                      <rect x="64" y="10" width="44" height="45" rx="3" fill="#85968A"/>
+                      <line x1="12" y1="32" x2="108" y2="32" stroke="#FAF6F0" stroke-width="1.5" stroke-dasharray="3 2"/>
                     </svg>
                   </div>
+                  <!-- Ceramic shelf illustration -->
                   <div class="mini-photo">
                     <svg viewBox="0 0 120 65" preserveAspectRatio="xMidYMid slice">
-                      <rect width="120" height="65" fill="#D5CEC6"/>
-                      <rect x="65" y="8" width="42" height="48" fill="#8C6D56"/>
-                      <rect x="16" y="28" width="38" height="28" fill="#F2ECE4"/>
+                      <rect width="120" height="65" fill="#D9CFC3"/>
+                      <rect x="12" y="48" width="96" height="6" fill="#A6886B"/>
+                      <path d="M26 48 C26 30, 44 30, 44 48 Z" fill="#FAF6F0"/>
+                      <rect x="56" y="24" width="18" height="24" rx="4" fill="#C48B63"/>
+                      <ellipse cx="92" cy="41" rx="11" ry="7" fill="#7D8F84"/>
                     </svg>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="mini-featured-label">Featured Projects</div>
+            <div class="mini-featured-label">Seasonal Goods</div>
             <div class="mini-cards-row">
               <div class="mini-card">
                 <div class="mini-card-img">
                   <svg viewBox="0 0 120 80" preserveAspectRatio="xMidYMid slice">
-                    <rect width="120" height="80" fill="#DFD5CA"/>
-                    <rect x="34" y="10" width="52" height="42" fill="#FAF6F0" stroke="#B79B82" stroke-width="2"/>
-                    <circle cx="60" cy="31" r="11" fill="#FFD166"/>
-                    <rect x="12" y="60" width="96" height="20" fill="#C2AB94"/>
+                    <rect width="120" height="80" fill="#E4D9CB"/>
+                    <rect x="20" y="14" width="80" height="52" rx="4" fill="#F6EFE6"/>
+                    <rect x="20" y="24" width="80" height="7" fill="#FFD166"/>
+                    <rect x="20" y="49" width="80" height="5" fill="#8C735B"/>
                   </svg>
                 </div>
-                <div class="mini-card-caption">Editorial &amp; Brand</div>
+                <div class="mini-card-caption">Cascade Wool Throw</div>
               </div>
               <div class="mini-card">
                 <div class="mini-card-img">
                   <svg viewBox="0 0 120 80" preserveAspectRatio="xMidYMid slice">
-                    <rect width="120" height="80" fill="#E6DCD1"/>
-                    <rect x="26" y="12" width="68" height="46" fill="#C98A6B"/>
-                    <path d="M40 58 C40 34, 80 34, 80 58 Z" fill="#F4EDE4"/>
+                    <rect width="120" height="80" fill="#DFD5C8"/>
+                    <rect x="24" y="12" width="72" height="56" rx="4" fill="#C79E78"/>
+                    <path d="M36 68 L36 32 Q60 18 84 32 L84 68 Z" fill="#FAF6F0"/>
                   </svg>
                 </div>
-                <div class="mini-card-caption">Creative Studio</div>
+                <div class="mini-card-caption">Washed Linen Duvet</div>
               </div>
               <div class="mini-card">
                 <div class="mini-card-img">
                   <svg viewBox="0 0 120 80" preserveAspectRatio="xMidYMid slice">
-                    <rect width="120" height="80" fill="#D4C9BC"/>
-                    <rect x="18" y="16" width="34" height="54" fill="#7D8C82"/>
-                    <rect x="62" y="24" width="42" height="46" fill="#B58E6F"/>
+                    <rect width="120" height="80" fill="#D8CFC4"/>
+                    <rect x="14" y="56" width="92" height="6" fill="#9E8267"/>
+                    <path d="M34 56 C32 32, 68 32, 66 56 Z" fill="#7A8E82"/>
+                    <circle cx="84" cy="44" r="10" fill="#FFD166"/>
                   </svg>
                 </div>
-                <div class="mini-card-caption">Hospitality Design</div>
+                <div class="mini-card-caption">Stoneware Vessels</div>
               </div>
             </div>
           </div>
@@ -1393,27 +1418,27 @@
         <div class="phone-frame">
           <div class="phone-screen">
             <div class="phone-header">
-              <span>Client</span>
+              <span>Alder &amp; Loom</span>
               <span class="phone-hamburger"></span>
             </div>
             <div class="phone-hero-img">
               <svg viewBox="0 0 140 80" preserveAspectRatio="xMidYMid slice">
-                <rect width="140" height="80" fill="#DFD4C8"/>
-                <rect x="42" y="10" width="56" height="46" fill="#FAF6F0" stroke="#A68B73" stroke-width="2"/>
-                <circle cx="70" cy="33" r="12" fill="#FFD166"/>
-                <rect x="14" y="62" width="112" height="18" fill="#BFA892"/>
+                <rect width="140" height="80" fill="#E4D8C9"/>
+                <rect x="18" y="10" width="104" height="60" rx="4" fill="#F6EFE6"/>
+                <rect x="18" y="22" width="104" height="8" fill="#FFD166"/>
+                <rect x="18" y="50" width="104" height="6" fill="#85968A"/>
               </svg>
             </div>
-            <div class="phone-title">Alder &amp; Loom<br>Studio</div>
+            <div class="phone-title">Cascade Wool<br>Collection</div>
             <p class="phone-copy">
-              High-performing websites crafted for small businesses and independent brands.
+              Woven in small batches with natural fibers for warm, tactile spaces.
             </p>
-            <span class="phone-btn">View Work</span>
+            <span class="phone-btn">Shop Now</span>
             <div class="phone-bottom-img">
               <svg viewBox="0 0 140 55" preserveAspectRatio="xMidYMid slice">
-                <rect width="140" height="55" fill="#D5C8B8"/>
-                <rect x="16" y="10" width="45" height="36" fill="#9C7A5E"/>
-                <rect x="72" y="14" width="52" height="32" fill="#EAE2D8"/>
+                <rect width="140" height="55" fill="#D9CFC3"/>
+                <rect x="14" y="10" width="52" height="35" rx="3" fill="#C79E78"/>
+                <rect x="74" y="10" width="52" height="35" rx="3" fill="#85968A"/>
               </svg>
             </div>
           </div>
