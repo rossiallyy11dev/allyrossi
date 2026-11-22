@@ -1041,7 +1041,7 @@
       border-radius: 16px;
       padding: 1.45rem 1.6rem;
       margin-bottom: 1.5rem;
-      max-width: 460px;
+      width: 100%;
     }
 
     .contact-info-eyebrow {
@@ -1076,17 +1076,17 @@
       align-items: center;
       gap: 1.5rem;
       font-size: 0.95rem;
-      font-weight: 500;
+      font-weight: 600;
     }
 
     .contact-quick-links a {
-      color: #475569;
+      color: #FFD166;
       text-decoration: none;
-      transition: color 0.2s ease;
+      transition: color 0.2s ease, opacity 0.2s ease;
     }
 
     .contact-quick-links a:hover {
-      color: #5699CA;
+      color: #FFE299;
     }
 
     .form-row {
@@ -1137,6 +1137,12 @@
       transition: border-color 0.2s ease, background-color 0.2s ease;
     }
 
+    select.is-empty,
+    select:invalid {
+      color: #FFD166;
+      font-weight: 500;
+    }
+
     input::placeholder,
     textarea::placeholder {
       color: #94A3B8;
@@ -1152,6 +1158,10 @@
     select option {
       background-color: #ffffff;
       color: #1E293B;
+    }
+
+    select option[disabled] {
+      color: #D99B16;
     }
 
     textarea {
@@ -1206,7 +1216,7 @@
     .footer-name {
       font-size: 1.45rem;
       font-weight: 700;
-      color: #1E293B;
+      color: #FFD166;
       margin-bottom: 1.15rem;
       letter-spacing: -0.02em;
     }
@@ -1218,20 +1228,21 @@
     }
 
     .footer-links a {
-      color: #1E293B;
+      color: #FFD166;
       text-decoration: none;
       font-size: 0.95rem;
-      font-weight: 400;
-      border-bottom: 1px solid #1E293B;
+      font-weight: 500;
+      border-bottom: 1px solid #FFD166;
       padding-bottom: 1px;
       display: inline-block;
       width: fit-content;
       margin-left: auto;
-      transition: opacity 0.2s ease;
+      transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
     }
 
     .footer-links a:hover {
-      opacity: 0.75;
+      color: #FFE299;
+      border-color: #FFE299;
     }
 
     /* RESPONSIVE BREAKPOINTS */
@@ -2229,7 +2240,7 @@
       </div>
 
       <div class="contact-sidebar">
-        <h2>contact</h2>
+        <h2>let's work together</h2>
         <p class="contact-sidebar-lead">
           Tell me a little about your business, what you’re building, and your ideal timeline. I typically reply within <strong>1–2 business days</strong>.
         </p>
@@ -2243,13 +2254,13 @@
           <div class="contact-info-block">
             <div class="contact-info-eyebrow">Not Sure Which Option Fits?</div>
             <p class="contact-info-copy">
-              Pick the closest service in the dropdown and share a few notes in your message—we’ll figure out the right scope together.
+              Pick the closest service in the dropdown and share a few notes in your message. We’ll figure out the right scope together.
             </p>
           </div>
         </div>
 
         <div class="contact-quick-links">
-          <a href="#">Back to top &uarr;</a>
+          <a href="#">back to top &uarr;</a>
           <a href="#about">about</a>
           <a href="#services">services</a>
         </div>
@@ -2269,7 +2280,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Accordion, Service Pre-fill & Hamburger Menu -->
+  <!-- JavaScript for Accordion, Service Pre-fill, Select Placeholder & Hamburger Menu -->
   <script>
     const menuToggle = id => document.getElementById(id);
     const toggleBtn = menuToggle('mobile-menu');
@@ -2308,6 +2319,16 @@
       });
     });
 
+    // Keep placeholder "Select an option" butter yellow until a value is chosen
+    function syncSelectPlaceholderState(selectEl) {
+      selectEl.classList.toggle('is-empty', !selectEl.value);
+    }
+
+    document.querySelectorAll('select').forEach(selectEl => {
+      syncSelectPlaceholderState(selectEl);
+      selectEl.addEventListener('change', () => syncSelectPlaceholderState(selectEl));
+    });
+
     // Pre-select the matching Service Type when clicking "Inquire about this →"
     document.querySelectorAll('.service-inquire-link').forEach(link => {
       link.addEventListener('click', () => {
@@ -2315,6 +2336,7 @@
         const serviceSelect = document.getElementById('service-type');
         if (serviceSelect && selectedService) {
           serviceSelect.value = selectedService;
+          syncSelectPlaceholderState(serviceSelect);
         }
       });
     });
