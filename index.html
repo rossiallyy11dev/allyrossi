@@ -653,48 +653,115 @@
     .about-section {
       background-color: #ffffff;
       color: #5699CA;
-      padding: 3.5rem 2.5rem 4.5rem 2.5rem;
-      min-height: 100vh;
+      padding: 4.5rem 2.5rem 5.5rem 2.5rem;
     }
 
     .about-container {
-      max-width: 1100px;
+      max-width: 1240px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 4rem;
+      align-items: start;
+    }
+
+    .about-left {
+      display: flex;
+      flex-direction: column;
     }
 
     .about-heading {
-      font-size: clamp(2.2rem, 3.8vw, 3.5rem);
+      font-size: clamp(2.15rem, 3.35vw, 3.15rem);
       font-weight: 700;
-      line-height: 1.2;
-      margin-bottom: 2.5rem;
+      line-height: 1.24;
+      margin-bottom: 1.75rem;
       letter-spacing: -0.02em;
+      color: #5699CA;
     }
 
     .about-text {
-      font-size: 1.2rem;
-      font-weight: 500;
-      line-height: 1.7;
-      margin-bottom: 2rem;
-      max-width: 650px;
-      opacity: 0.9;
+      font-size: 1.12rem;
+      font-weight: 400;
+      line-height: 1.65;
+      margin-bottom: 1.25rem;
+      max-width: 640px;
+      color: #5699CA;
     }
 
-    /* Control Line Break: Desktop Only */
-    .desktop-only-break {
-      display: inline;
+    .about-eyebrow {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8A99A8;
+      margin-top: 1.6rem;
+      margin-bottom: 1.1rem;
     }
 
-    /* Headshot Area (Square Container) */
+    .about-features-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+    }
+
+    .about-feature-card {
+      background-color: #F4F7FA;
+      border-radius: 16px;
+      padding: 1.45rem 1.5rem;
+    }
+
+    .about-feature-title {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #5699CA;
+      margin-bottom: 0.55rem;
+    }
+
+    .about-feature-title svg {
+      width: 16px;
+      height: 16px;
+      stroke: #5699CA;
+      fill: none;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      flex-shrink: 0;
+    }
+
+    .about-feature-desc {
+      font-size: 0.92rem;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #5C6B7A;
+    }
+
+    /* About Right Column: Profile Card & Design Philosophy */
+    .about-right {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35rem;
+    }
+
+    .about-profile-card {
+      background-color: #ffffff;
+      border: 1px solid #E2E8F0;
+      border-radius: 22px;
+      padding: 0.85rem 0.85rem 1.25rem 0.85rem;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+    }
+
     .headshot-space {
-      width: 340px;
-      height: 340px;
-      border-radius: 36px;
-      margin-top: 3.5rem;
+      width: 100%;
+      aspect-ratio: 1 / 1.02;
+      border-radius: 15px;
       overflow: hidden;
-      background-color: #e2e8f0;
+      background-color: #DCE7F2;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: none;
     }
 
     .headshot-space img {
@@ -702,6 +769,60 @@
       height: 100%;
       object-fit: cover;
       display: block;
+    }
+
+    .about-profile-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.75rem;
+      padding: 1.1rem 0.45rem 0 0.45rem;
+    }
+
+    .about-profile-name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #1E293B;
+      line-height: 1.25;
+    }
+
+    .about-profile-role {
+      font-size: 0.86rem;
+      font-weight: 400;
+      color: #64748B;
+      margin-top: 0.15rem;
+    }
+
+    .about-location-pill {
+      background-color: #EDF3F9;
+      color: #5699CA;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 0.38rem 0.8rem;
+      border-radius: 50px;
+      white-space: nowrap;
+    }
+
+    .about-philosophy-card {
+      background-color: #F4F7FA;
+      border-radius: 18px;
+      padding: 1.5rem 1.65rem;
+    }
+
+    .about-philosophy-label {
+      font-size: 0.76rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #5699CA;
+      margin-bottom: 0.65rem;
+    }
+
+    .about-philosophy-text {
+      font-size: 0.93rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #475569;
     }
 
     /* Services Section & Accordion */
@@ -982,6 +1103,10 @@
         min-height: auto;
       }
 
+      .about-container {
+        gap: 2.5rem;
+      }
+
       .contact-section {
         gap: 2.5rem;
       }
@@ -1042,6 +1167,15 @@
       .services-section,
       .contact-section {
         padding: 3.5rem 2.5rem 4rem 2.5rem;
+      }
+
+      .about-container {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .about-right {
+        max-width: 480px;
       }
 
       .contact-section {
@@ -1216,38 +1350,23 @@
         padding: 3rem 1.5rem 4rem 1.5rem;
       }
 
-      .about-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-      }
-
-      .about-heading,
-      .about-text {
-        width: 100%;
-      }
-
       .about-heading {
-        margin-bottom: 1.75rem;
+        margin-bottom: 1.35rem;
+        line-height: 1.24;
       }
 
       .about-text {
         font-size: 1.05rem;
         margin-bottom: 1rem;
-        font-weight: 500;
       }
 
-      /* Hide the line break on mobile */
-      .desktop-only-break {
-        display: none;
+      .about-features-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
       }
 
-      /* Mobile Square Headshot Box */
-      .headshot-space {
-        width: 280px;
-        height: 280px;
-        margin: 0.5rem 0 0 0;
+      .about-right {
+        max-width: 100%;
       }
 
       .services-intro {
@@ -1548,19 +1667,95 @@
   <!-- About Section -->
   <section id="about" class="about-section">
     <div class="about-container">
-      <h2 class="about-heading">hi, I’m Ally! I develop websites for small businesses and entrepreneurs.</h2>
-      
-      <p class="about-text">
-        By leveraging HTML, CSS, and JavaScript, I build SEO-optimized sites that function seamlessly and engage your audience.
-      </p>
-      
-      <p class="about-text">
-        I’m based in Portland, OR, and would love to help bring your <br class="desktop-only-break">online presence to life.
-      </p>
+      <!-- Left Column -->
+      <div class="about-left">
+        <h2 class="about-heading">hi, I’m Ally! I develop websites for small businesses and entrepreneurs.</h2>
+        
+        <p class="about-text">
+          By leveraging HTML, CSS, and JavaScript, I build SEO-optimized sites that function seamlessly and engage your audience.
+        </p>
+        
+        <p class="about-text">
+          I’m based in Portland, OR, and would love to help bring your online presence to life.
+        </p>
 
-      <!-- Headshot Area -->
-      <div class="headshot-space">
-        <img src="Ally Rossi Headshot 6.png" alt="Ally Rossi Headshot">
+        <div class="about-eyebrow">What Every Build Includes</div>
+        <div class="about-features-grid">
+          <div class="about-feature-card">
+            <div class="about-feature-title">
+              <svg viewBox="0 0 24 24">
+                <rect x="5" y="2" width="14" height="20" rx="2"/>
+                <line x1="12" y1="18" x2="12.01" y2="18"/>
+              </svg>
+              <span>Responsive Mobile-First Design</span>
+            </div>
+            <p class="about-feature-desc">
+              Designed to look crisp and navigate effortlessly on phones, tablets, and desktops.
+            </p>
+          </div>
+
+          <div class="about-feature-card">
+            <div class="about-feature-title">
+              <svg viewBox="0 0 24 24">
+                <polyline points="16 18 22 12 16 6"/>
+                <polyline points="8 6 2 12 8 18"/>
+              </svg>
+              <span>Clean Custom Code</span>
+            </div>
+            <p class="about-feature-desc">
+              Lightweight, fast-loading pages built without bloated templates slowing you down.
+            </p>
+          </div>
+
+          <div class="about-feature-card">
+            <div class="about-feature-title">
+              <svg viewBox="0 0 24 24">
+                <circle cx="11" cy="11" r="7"/>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+              </svg>
+              <span>Foundational SEO Setup</span>
+            </div>
+            <p class="about-feature-desc">
+              Semantic structure, clear headings, and metadata so customers can actually find you.
+            </p>
+          </div>
+
+          <div class="about-feature-card">
+            <div class="about-feature-title">
+              <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M9 12l2 2 4-4"/>
+              </svg>
+              <span>Easy Content Handoff</span>
+            </div>
+            <p class="about-feature-desc">
+              Clear documentation and straightforward structure so future updates stay stress-free.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div class="about-right">
+        <div class="about-profile-card">
+          <div class="headshot-space">
+            <img src="Ally Rossi Headshot 6.png" alt="Ally Rossi Headshot">
+          </div>
+          <div class="about-profile-meta">
+            <div>
+              <div class="about-profile-name">Ally Rossi</div>
+              <div class="about-profile-role">Web Designer &amp; Developer</div>
+            </div>
+            <span class="about-location-pill">Portland, OR</span>
+          </div>
+        </div>
+
+        <div class="about-philosophy-card">
+          <div class="about-philosophy-label">Design Philosophy</div>
+          <p class="about-philosophy-text">
+            A good small-business website shouldn’t feel overwhelming to navigate or maintain. I focus on clear hierarchy, thoughtful typography, and purposeful pages that guide visitors directly to working with you.
+          </p>
+        </div>
       </div>
     </div>
   </section>
