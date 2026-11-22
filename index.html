@@ -1378,33 +1378,43 @@
         padding: 3rem 1.5rem 4rem 1.5rem;
       }
 
+      .about-container {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
       .about-left {
-        margin-left: 0;
+        display: contents;
       }
 
       .about-heading {
+        order: 1;
         margin-bottom: 1.35rem;
         line-height: 1.24;
       }
 
       .about-text {
+        order: 2;
         font-size: 1.05rem;
         margin-bottom: 1rem;
       }
 
+      .about-right {
+        order: 3;
+        max-width: 100%;
+        margin: 1.25rem 0 2.25rem 0;
+      }
+
       .about-builds-block {
-        margin-top: 0.5rem;
+        order: 4;
+        margin-top: 0;
         padding-top: 0;
       }
 
       .about-features-grid {
         grid-template-columns: 1fr;
         gap: 0.9rem;
-      }
-
-      .about-right {
-        max-width: 100%;
-        margin-right: 0;
       }
 
       .services-intro {
