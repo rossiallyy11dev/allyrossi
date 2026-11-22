@@ -22,6 +22,7 @@
     html {
       scroll-behavior: smooth;
       background-color: #000000;
+      overflow-x: hidden;
     }
 
     body {
@@ -30,6 +31,7 @@
       background-color: #000000;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
     }
 
     /* Navigation Bar - Tight Desktop Margins */
@@ -842,8 +844,11 @@
 
     .services-container {
       width: 100%;
-      max-width: 1180px;
+      max-width: 1380px;
       margin: 0 auto;
+      position: relative;
+      left: -0.125rem;
+      width: calc(100% + 2.25rem);
     }
 
     .section-title {
@@ -1203,6 +1208,11 @@
         margin-right: -0.75rem;
       }
 
+      .services-container {
+        left: 0.125rem;
+        width: calc(100% + 1.25rem);
+      }
+
       .contact-section {
         gap: 2.5rem;
       }
@@ -1284,6 +1294,11 @@
       .about-right {
         max-width: 480px;
         margin-right: 0;
+      }
+
+      .services-container {
+        left: 0;
+        width: 100%;
       }
 
       .services-intro {
