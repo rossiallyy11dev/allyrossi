@@ -850,14 +850,15 @@
       font-size: clamp(2.4rem, 3.6vw, 3.1rem);
       font-weight: 700;
       margin-bottom: 1.25rem;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
       line-height: 1.1;
     }
 
     .services-intro {
       font-size: 1.15rem;
       font-weight: 400;
-      max-width: 650px;
+      max-width: none;
+      white-space: nowrap;
       margin-bottom: 3rem;
       line-height: 1.55;
       color: rgba(255, 255, 255, 0.94);
@@ -1284,6 +1285,10 @@
         margin-right: 0;
       }
 
+      .services-intro {
+        font-size: 1.05rem;
+      }
+
       .service-cards-grid {
         grid-template-columns: 1fr;
         gap: 0.9rem;
@@ -1501,7 +1506,8 @@
       }
 
       .services-intro {
-        font-size: 1.05rem;
+        font-size: 0.98rem;
+        white-space: normal;
         margin-bottom: 2.25rem;
       }
 
@@ -1903,7 +1909,7 @@
   <section id="services" class="services-section">
     <div class="services-container">
       <h2 class="section-title">services</h2>
-      <p class="services-intro">Please contact me directly for pricing, as it depends on the scope of your project.</p>
+      <p class="services-intro">Each build is completely custom. Please contact me directly for pricing, as it depends on the scope of your project.</p>
 
       <div class="services-list">
         <!-- Service 1: Landing Page -->
