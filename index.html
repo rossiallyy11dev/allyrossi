@@ -70,15 +70,17 @@
     }
 
     .nav-links a {
+      display: inline-block;
       color: #ffffff;
       text-decoration: none;
       font-size: 1.05rem;
       font-weight: 500;
-      transition: color 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
     }
 
     .nav-links a:hover {
       color: #FFD166;
+      transform: translateY(-2px);
     }
 
     /* Hamburger Button (Hidden on Desktop) */
@@ -1074,13 +1076,15 @@
     }
 
     .contact-quick-links a {
+      display: inline-block;
       color: #FFD166;
       text-decoration: none;
-      transition: color 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease, color 0.2s ease, opacity 0.2s ease;
     }
 
     .contact-quick-links a:hover {
       color: #5699CA;
+      transform: translateY(-2px);
     }
 
     .form-row {
@@ -1238,12 +1242,13 @@
       display: inline-block;
       width: fit-content;
       margin-left: auto;
-      transition: color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+      transition: transform 0.2s ease, color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
     }
 
     .footer-links a:hover {
       color: #5699CA;
       border-color: #5699CA;
+      transform: translateY(-2px);
     }
 
     /* RESPONSIVE BREAKPOINTS */
