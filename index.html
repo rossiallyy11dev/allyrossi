@@ -21,14 +21,14 @@
 
     html {
       scroll-behavior: smooth;
-      background-color: #000000;
+      background-color: #ffffff;
       overflow-x: hidden;
     }
 
     body {
       font-family: 'Work Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
       color: #ffffff;
-      background-color: #000000;
+      background-color: #ffffff;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
@@ -843,7 +843,6 @@
     }
 
     .services-container {
-      width: 100%;
       max-width: 1380px;
       margin: 0 auto;
       position: relative;
@@ -991,44 +990,116 @@
       border-color: #FFE299;
     }
 
-    /* Contact Section */
+    /* Contact Section (White Background, Matched Layout) */
     .contact-section {
-      background-color: #000000;
-      color: #5699CA;
-      padding: 3.5rem 2.5rem 4.5rem 2.5rem;
-      display: flex;
-      justify-content: space-between;
-      gap: 4rem;
+      background-color: #ffffff;
+      color: #1E293B;
+      padding: 4rem 2.5rem 4.5rem 2.5rem;
+    }
+
+    .contact-container {
+      width: 100%;
+      max-width: 1380px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4.5rem;
+      align-items: start;
     }
 
     .contact-form-container {
-      flex: 1;
-      max-width: 650px;
+      width: 100%;
     }
 
     .contact-sidebar {
-      width: 300px;
-      text-align: right;
+      width: 100%;
+      text-align: left;
+      padding-top: 0.25rem;
     }
 
     .contact-sidebar h2 {
-      font-size: 2.8rem;
+      font-size: clamp(2.4rem, 3.6vw, 3.1rem);
       font-weight: 700;
       color: #5699CA;
       letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .contact-sidebar-lead {
+      font-size: 1.02rem;
+      font-weight: 400;
+      line-height: 1.6;
+      color: #334155;
+      max-width: 440px;
+      margin-bottom: 1.6rem;
+    }
+
+    .contact-info-card {
+      background-color: #F4F7FA;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 1.45rem 1.6rem;
+      margin-bottom: 1.5rem;
+      max-width: 460px;
+    }
+
+    .contact-info-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #64748B;
+      margin-bottom: 0.35rem;
+    }
+
+    .contact-info-value {
+      font-size: 0.96rem;
+      font-weight: 600;
+      color: #1E293B;
+      line-height: 1.5;
+    }
+
+    .contact-info-block + .contact-info-block {
+      margin-top: 1.15rem;
+    }
+
+    .contact-info-copy {
+      font-size: 0.92rem;
+      font-weight: 400;
+      line-height: 1.55;
+      color: #475569;
+    }
+
+    .contact-quick-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+      font-weight: 500;
+    }
+
+    .contact-quick-links a {
+      color: #475569;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .contact-quick-links a:hover {
+      color: #5699CA;
     }
 
     .form-row {
       display: flex;
-      gap: 1.5rem;
-      margin-bottom: 2rem;
+      gap: 1.35rem;
+      margin-bottom: 1.45rem;
     }
 
     .form-group {
       flex: 1;
       display: flex;
       flex-direction: column;
-      margin-bottom: 2rem;
+      margin-bottom: 1.45rem;
     }
 
     .form-group.half {
@@ -1036,15 +1107,16 @@
     }
 
     label {
-      font-size: 1.05rem;
+      font-size: 0.92rem;
       font-weight: 500;
       color: #5699CA;
-      margin-bottom: 0.6rem;
+      margin-bottom: 0.5rem;
     }
 
     label .required {
       font-weight: 400;
-      opacity: 0.85;
+      color: #64748B;
+      font-size: 0.85rem;
     }
 
     input[type="text"],
@@ -1052,75 +1124,76 @@
     select,
     textarea {
       width: 100%;
-      background: transparent;
-      border: 1px solid #5699CA;
-      color: #5699CA;
-      padding: 1rem 1.2rem;
+      background-color: #F8FAFC;
+      border: 1px solid #CBD5E1;
+      color: #1E293B;
+      padding: 0.88rem 1.05rem;
       font-family: inherit;
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       outline: none;
-      border-radius: 0;
+      border-radius: 10px;
       appearance: none;
       -webkit-appearance: none;
+      transition: border-color 0.2s ease, background-color 0.2s ease;
     }
 
-    select:has(option[value=""]:checked),
-    select:invalid {
-      color: #5699CA;
+    input::placeholder,
+    textarea::placeholder {
+      color: #94A3B8;
     }
 
     select {
-      background-image: url("data:image/svg+xml;utf8,<svg fill='%235699CA' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+      background-image: url("data:image/svg+xml;utf8,<svg fill='%235699CA' height='22' viewBox='0 0 24 24' width='22' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
       background-repeat: no-repeat;
       background-position: right 1rem center;
       padding-right: 2.5rem;
     }
 
     select option {
-      background-color: #000000;
-      color: #ffffff;
+      background-color: #ffffff;
+      color: #1E293B;
     }
 
     textarea {
-      min-height: 180px;
+      min-height: 150px;
       resize: vertical;
     }
 
     input:focus, select:focus, textarea:focus {
       border-color: #5699CA;
+      background-color: #ffffff;
     }
 
     .submit-btn {
-      background: transparent;
-      color: #5699CA;
-      border: 1px solid #5699CA;
-      padding: 1.1rem 3rem;
+      background-color: #FFD166;
+      color: #1E293B;
+      border: none;
+      padding: 0.95rem 2.2rem;
       font-family: inherit;
-      font-size: 1.05rem;
+      font-size: 0.98rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
+      letter-spacing: 0.01em;
       border-radius: 50px;
       cursor: pointer;
-      margin-top: 1rem;
-      transition: all 0.2s ease;
+      margin-top: 0.35rem;
+      transition: transform 0.2s ease, background-color 0.2s ease;
     }
 
     .submit-btn:hover {
-      background-color: #5699CA;
-      color: #000000;
+      background-color: #F4C95D;
+      transform: translateY(-2px);
     }
 
     /* Footer Styles */
     .footer-divider {
       border: none;
-      border-top: 1px solid #ffffff;
-      margin: 0 2.5rem 3rem 2.5rem;
+      border-top: 1px solid #E2E8F0;
+      margin: 0 2.5rem 2.5rem 2.5rem;
     }
 
     .footer-content {
-      background-color: #000000;
-      padding: 0 2.5rem 1.85rem 2.5rem;
+      background-color: #ffffff;
+      padding: 0 2.5rem 2rem 2.5rem;
       display: flex;
       justify-content: flex-end;
       align-items: flex-end;
@@ -1131,25 +1204,25 @@
     }
 
     .footer-name {
-      font-size: 1.5rem;
+      font-size: 1.45rem;
       font-weight: 700;
-      color: #ffffff;
-      margin-bottom: 1.5rem;
+      color: #1E293B;
+      margin-bottom: 1.15rem;
       letter-spacing: -0.02em;
     }
 
     .footer-links {
       display: flex;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 0.45rem;
     }
 
     .footer-links a {
-      color: #ffffff;
+      color: #1E293B;
       text-decoration: none;
       font-size: 0.95rem;
       font-weight: 400;
-      border-bottom: 1px solid #ffffff;
+      border-bottom: 1px solid #1E293B;
       padding-bottom: 1px;
       display: inline-block;
       width: fit-content;
@@ -1158,7 +1231,7 @@
     }
 
     .footer-links a:hover {
-      opacity: 0.8;
+      opacity: 0.75;
     }
 
     /* RESPONSIVE BREAKPOINTS */
@@ -1213,16 +1286,16 @@
         width: calc(100% + 1.25rem);
       }
 
-      .contact-section {
-        gap: 2.5rem;
+      .contact-container {
+        gap: 3rem;
       }
 
       .footer-divider {
-        margin: 0 3rem 3rem 3rem;
+        margin: 0 3rem 2.5rem 3rem;
       }
 
       .footer-content {
-        padding: 0 3rem 1.85rem 3rem;
+        padding: 0 3rem 2rem 3rem;
       }
     }
 
@@ -1310,14 +1383,13 @@
         gap: 0.9rem;
       }
 
-      .contact-section {
-        flex-direction: column-reverse;
-        gap: 3rem;
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 2.75rem;
       }
 
       .contact-sidebar {
-        width: 100%;
-        text-align: left;
+        order: -1;
       }
 
       .contact-sidebar h2 {
@@ -1325,11 +1397,11 @@
       }
 
       .footer-divider {
-        margin: 0 2.5rem 3rem 2.5rem;
+        margin: 0 2.5rem 2.5rem 2.5rem;
       }
 
       .footer-content {
-        padding: 0 2.5rem 1.85rem 2.5rem;
+        padding: 0 2.5rem 2rem 2.5rem;
       }
     }
 
@@ -1545,7 +1617,7 @@
       }
 
       .form-group.half {
-        margin-bottom: 2rem;
+        margin-bottom: 1.45rem;
       }
 
       .submit-btn {
@@ -1554,11 +1626,11 @@
       }
 
       .footer-divider {
-        margin: 0 1.5rem 3rem 1.5rem;
+        margin: 0 1.5rem 2.5rem 1.5rem;
       }
 
       .footer-content {
-        padding: 0 1.5rem 1.85rem 1.5rem;
+        padding: 0 1.5rem 2rem 1.5rem;
       }
     }
 
@@ -1990,7 +2062,7 @@
           </div>
         </div>
 
-        <!-- Service 3: Website Audit -->
+        <!-- Service 3: Website Refresh -->
         <div class="service-item">
           <div class="service-header">
             <h3 class="service-name">Website Refresh</h3>
@@ -2086,77 +2158,102 @@
     </div>
   </section>
 
-  <!-- Wave: Services (#5699CA) to Contact (#000000) -->
+  <!-- Wave: Services (#5699CA) to Contact (#FFFFFF) -->
   <div class="wave-divider" style="background-color: #5699CA;">
     <svg viewBox="0 0 1440 80" preserveAspectRatio="none">
-      <path d="M0,40 C360,85 1080,-5 1440,40 L1440,80 L0,80 Z" fill="#000000"></path>
+      <path d="M0,40 C360,85 1080,-5 1440,40 L1440,80 L0,80 Z" fill="#ffffff"></path>
     </svg>
   </div>
 
   <!-- Contact Section -->
   <section id="contact" class="contact-section">
-    <div class="contact-form-container">
-      <form action="https://formspree.io/f/xkjjyqbe" method="POST">
-        
-        <div class="form-row">
-          <div class="form-group half">
-            <label for="first-name">First Name <span class="required">(required)</span></label>
-            <input type="text" id="first-name" name="first_name" required>
+    <div class="contact-container">
+      <div class="contact-form-container">
+        <form action="https://formspree.io/f/xkjjyqbe" method="POST">
+          
+          <div class="form-row">
+            <div class="form-group half">
+              <label for="first-name">First Name <span class="required">(required)</span></label>
+              <input type="text" id="first-name" name="first_name" required>
+            </div>
+            <div class="form-group half">
+              <label for="last-name">Last Name <span class="required">(required)</span></label>
+              <input type="text" id="last-name" name="last_name" required>
+            </div>
           </div>
-          <div class="form-group half">
-            <label for="last-name">Last Name <span class="required">(required)</span></label>
-            <input type="text" id="last-name" name="last_name" required>
+
+          <div class="form-group">
+            <label for="email">Email <span class="required">(required)</span></label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="service-type">Service Type <span class="required">(required)</span></label>
+            <select id="service-type" name="service_type" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Landing Page">Landing Page</option>
+              <option value="Full Website Design">Full Website Design</option>
+              <option value="Website Audit">Website Audit</option>
+              <option value="Content Updates">Content Updates</option>
+              <option value="Logo Design">Logo Design</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="timeline">Project Timeline <span class="required">(required)</span></label>
+            <select id="timeline" name="timeline" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="Ready to start ASAP">Ready to start ASAP</option>
+              <option value="Within the next month">Within the next month</option>
+              <option value="Planning for later this year">Planning for later this year</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="budget">Budget Range</label>
+            <select id="budget" name="budget">
+              <option value="" disabled selected>Select an option</option>
+              <option value="Under $1,000">Under $1,000</option>
+              <option value="$1,000-$3,000">$1,000-$3,000</option>
+              <option value="$3,000+">$3,000+</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message <span class="required">(required)</span></label>
+            <textarea id="message" name="message" placeholder="Tell me a little about your business, what you’re building, and your ideal timeline..." required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Submit Inquiry &rarr;</button>
+        </form>
+      </div>
+
+      <div class="contact-sidebar">
+        <h2>contact</h2>
+        <p class="contact-sidebar-lead">
+          Tell me a little about your business, what you’re building, and your ideal timeline. I typically reply within <strong>1–2 business days</strong>.
+        </p>
+
+        <div class="contact-info-card">
+          <div class="contact-info-block">
+            <div class="contact-info-eyebrow">Location &amp; Availability</div>
+            <div class="contact-info-value">Portland, Oregon &bull; Working with clients nationwide</div>
+          </div>
+
+          <div class="contact-info-block">
+            <div class="contact-info-eyebrow">Not Sure Which Option Fits?</div>
+            <p class="contact-info-copy">
+              Pick the closest service in the dropdown and share a few notes in your message—we’ll figure out the right scope together.
+            </p>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="email">Email <span class="required">(required)</span></label>
-          <input type="email" id="email" name="email" required>
+        <div class="contact-quick-links">
+          <a href="#">Back to top &uarr;</a>
+          <a href="#about">about</a>
+          <a href="#services">services</a>
         </div>
-
-        <div class="form-group">
-          <label for="service-type">Service Type <span class="required">(required)</span></label>
-          <select id="service-type" name="service_type" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="Landing Page">Landing Page</option>
-            <option value="Full Website Design">Full Website Design</option>
-            <option value="Website Audit">Website Audit</option>
-            <option value="Content Updates">Content Updates</option>
-            <option value="Logo Design">Logo Design</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="timeline">Project Timeline <span class="required">(required)</span></label>
-          <select id="timeline" name="timeline" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="Ready to start ASAP">Ready to start ASAP</option>
-            <option value="Within the next month">Within the next month</option>
-            <option value="Planning for later this year">Planning for later this year</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="budget">Budget Range</label>
-          <select id="budget" name="budget">
-            <option value="" disabled selected>Select an option</option>
-            <option value="Under $1,000">Under $1,000</option>
-            <option value="$1,000-$3,000">$1,000-$3,000</option>
-            <option value="$3,000+">$3,000+</option>
-          </select>
-        </div>
-
-        <div class="form-group">
-          <label for="message">Message <span class="required">(required)</span></label>
-          <textarea id="message" name="message" required></textarea>
-        </div>
-
-        <button type="submit" class="submit-btn">SUBMIT</button>
-      </form>
-    </div>
-
-    <div class="contact-sidebar">
-      <h2>contact</h2>
+      </div>
     </div>
   </section>
 
