@@ -1086,7 +1086,7 @@
     }
 
     .contact-quick-links a:hover {
-      color: #FFE299;
+      color: #5699CA;
     }
 
     .form-row {
@@ -1137,12 +1137,6 @@
       transition: border-color 0.2s ease, background-color 0.2s ease;
     }
 
-    select.is-empty,
-    select:invalid {
-      color: #FFD166;
-      font-weight: 500;
-    }
-
     input::placeholder,
     textarea::placeholder {
       color: #94A3B8;
@@ -1161,7 +1155,7 @@
     }
 
     select option[disabled] {
-      color: #D99B16;
+      color: #64748B;
     }
 
     textarea {
@@ -2280,7 +2274,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Accordion, Service Pre-fill, Select Placeholder & Hamburger Menu -->
+  <!-- JavaScript for Accordion, Service Pre-fill & Hamburger Menu -->
   <script>
     const menuToggle = id => document.getElementById(id);
     const toggleBtn = menuToggle('mobile-menu');
@@ -2319,16 +2313,6 @@
       });
     });
 
-    // Keep placeholder "Select an option" butter yellow until a value is chosen
-    function syncSelectPlaceholderState(selectEl) {
-      selectEl.classList.toggle('is-empty', !selectEl.value);
-    }
-
-    document.querySelectorAll('select').forEach(selectEl => {
-      syncSelectPlaceholderState(selectEl);
-      selectEl.addEventListener('change', () => syncSelectPlaceholderState(selectEl));
-    });
-
     // Pre-select the matching Service Type when clicking "Inquire about this →"
     document.querySelectorAll('.service-inquire-link').forEach(link => {
       link.addEventListener('click', () => {
@@ -2336,7 +2320,6 @@
         const serviceSelect = document.getElementById('service-type');
         if (serviceSelect && selectedService) {
           serviceSelect.value = selectedService;
-          syncSelectPlaceholderState(serviceSelect);
         }
       });
     });
