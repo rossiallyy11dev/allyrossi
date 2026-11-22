@@ -830,14 +830,26 @@
       margin-top: 0.15rem;
     }
 
-    .about-location-pill {
-      background-color: #EDF3F9;
-      color: #5699CA;
-      font-size: 0.78rem;
-      font-weight: 600;
-      padding: 0.38rem 0.8rem;
+    .about-cta-btn {
+      background-color: #FFD166;
+      color: #1E293B;
+      text-decoration: none;
+      padding: 0.62rem 1.35rem;
       border-radius: 50px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      line-height: 1.2;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       white-space: nowrap;
+      flex-shrink: 0;
+      transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+
+    .about-cta-btn:hover {
+      background-color: #F4C95D;
+      transform: translateY(-2px);
     }
 
     .about-philosophy-card {
@@ -2029,7 +2041,7 @@
               <div class="about-profile-name">Ally Rossi</div>
               <div class="about-profile-role">Web Designer &amp; Developer</div>
             </div>
-            <span class="about-location-pill">Portland, OR</span>
+            <a href="#contact" class="about-cta-btn">Work With Me</a>
           </div>
         </div>
 
