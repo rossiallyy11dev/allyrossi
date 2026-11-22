@@ -663,12 +663,14 @@
       display: grid;
       grid-template-columns: 1.2fr 0.8fr;
       gap: 4rem;
-      align-items: start;
+      align-items: stretch;
     }
 
     .about-left {
       display: flex;
       flex-direction: column;
+      height: 100%;
+      margin-left: -1rem;
     }
 
     .about-heading {
@@ -689,13 +691,17 @@
       color: #5699CA;
     }
 
+    .about-builds-block {
+      margin-top: auto;
+      padding-top: 1.5rem;
+    }
+
     .about-eyebrow {
       font-size: 0.78rem;
       font-weight: 600;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       color: #8A99A8;
-      margin-top: 1.6rem;
       margin-bottom: 1.1rem;
     }
 
@@ -744,6 +750,7 @@
       display: flex;
       flex-direction: column;
       gap: 1.35rem;
+      margin-right: -1.25rem;
     }
 
     .about-profile-card {
@@ -1108,6 +1115,14 @@
         gap: 2.5rem;
       }
 
+      .about-left {
+        margin-left: -0.5rem;
+      }
+
+      .about-right {
+        margin-right: -0.75rem;
+      }
+
       .contact-section {
         gap: 2.5rem;
       }
@@ -1173,10 +1188,22 @@
       .about-container {
         grid-template-columns: 1fr;
         gap: 2.5rem;
+        align-items: start;
+      }
+
+      .about-left {
+        height: auto;
+        margin-left: 0;
+      }
+
+      .about-builds-block {
+        margin-top: 0.5rem;
+        padding-top: 0;
       }
 
       .about-right {
         max-width: 480px;
+        margin-right: 0;
       }
 
       .contact-section {
@@ -1351,6 +1378,10 @@
         padding: 3rem 1.5rem 4rem 1.5rem;
       }
 
+      .about-left {
+        margin-left: 0;
+      }
+
       .about-heading {
         margin-bottom: 1.35rem;
         line-height: 1.24;
@@ -1361,6 +1392,11 @@
         margin-bottom: 1rem;
       }
 
+      .about-builds-block {
+        margin-top: 0.5rem;
+        padding-top: 0;
+      }
+
       .about-features-grid {
         grid-template-columns: 1fr;
         gap: 0.9rem;
@@ -1368,6 +1404,7 @@
 
       .about-right {
         max-width: 100%;
+        margin-right: 0;
       }
 
       .services-intro {
@@ -1680,59 +1717,61 @@
           I’m based in Portland, OR, and would love to help bring your online presence to life.
         </p>
 
-        <div class="about-eyebrow">What Every Build Includes</div>
-        <div class="about-features-grid">
-          <div class="about-feature-card">
-            <div class="about-feature-title">
-              <svg viewBox="0 0 24 24">
-                <rect x="5" y="2" width="14" height="20" rx="2"/>
-                <line x1="12" y1="18" x2="12.01" y2="18"/>
-              </svg>
-              <span>Responsive Mobile-First Design</span>
+        <div class="about-builds-block">
+          <div class="about-eyebrow">What Every Build Includes</div>
+          <div class="about-features-grid">
+            <div class="about-feature-card">
+              <div class="about-feature-title">
+                <svg viewBox="0 0 24 24">
+                  <rect x="5" y="2" width="14" height="20" rx="2"/>
+                  <line x1="12" y1="18" x2="12.01" y2="18"/>
+                </svg>
+                <span>Responsive Mobile-First Design</span>
+              </div>
+              <p class="about-feature-desc">
+                Designed to look crisp and navigate effortlessly on phones, tablets, and desktops.
+              </p>
             </div>
-            <p class="about-feature-desc">
-              Designed to look crisp and navigate effortlessly on phones, tablets, and desktops.
-            </p>
-          </div>
 
-          <div class="about-feature-card">
-            <div class="about-feature-title">
-              <svg viewBox="0 0 24 24">
-                <polyline points="8 7 3 12 8 17"/>
-                <polyline points="16 7 21 12 16 17"/>
-                <line x1="14.5" y1="4" x2="9.5" y2="20"/>
-              </svg>
-              <span>Clean Custom Code</span>
+            <div class="about-feature-card">
+              <div class="about-feature-title">
+                <svg viewBox="0 0 24 24">
+                  <polyline points="8 7 3 12 8 17"/>
+                  <polyline points="16 7 21 12 16 17"/>
+                  <line x1="14.5" y1="4" x2="9.5" y2="20"/>
+                </svg>
+                <span>Clean Custom Code</span>
+              </div>
+              <p class="about-feature-desc">
+                Lightweight, fast-loading pages built without bloated templates slowing you down.
+              </p>
             </div>
-            <p class="about-feature-desc">
-              Lightweight, fast-loading pages built without bloated templates slowing you down.
-            </p>
-          </div>
 
-          <div class="about-feature-card">
-            <div class="about-feature-title">
-              <svg viewBox="0 0 24 24">
-                <circle cx="11" cy="11" r="7"/>
-                <line x1="21" y1="21" x2="16.65" y2="16.65"/>
-              </svg>
-              <span>Foundational SEO Setup</span>
+            <div class="about-feature-card">
+              <div class="about-feature-title">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="11" cy="11" r="7"/>
+                  <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+                </svg>
+                <span>Foundational SEO Setup</span>
+              </div>
+              <p class="about-feature-desc">
+                Semantic structure, clear headings, and metadata so customers can actually find you.
+              </p>
             </div>
-            <p class="about-feature-desc">
-              Semantic structure, clear headings, and metadata so customers can actually find you.
-            </p>
-          </div>
 
-          <div class="about-feature-card">
-            <div class="about-feature-title">
-              <svg viewBox="0 0 24 24">
-                <circle cx="12" cy="12" r="9"/>
-                <path d="M9 12l2 2 4-4"/>
-              </svg>
-              <span>Easy Content Handoff</span>
+            <div class="about-feature-card">
+              <div class="about-feature-title">
+                <svg viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="9"/>
+                  <path d="M9 12l2 2 4-4"/>
+                </svg>
+                <span>Easy Content Handoff</span>
+              </div>
+              <p class="about-feature-desc">
+                Clear documentation and straightforward structure so future updates stay stress-free.
+              </p>
             </div>
-            <p class="about-feature-desc">
-              Clear documentation and straightforward structure so future updates stay stress-free.
-            </p>
           </div>
         </div>
       </div>
