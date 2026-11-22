@@ -1031,7 +1031,7 @@
       font-weight: 400;
       line-height: 1.6;
       color: #334155;
-      max-width: 440px;
+      width: 100%;
       margin-bottom: 1.6rem;
     }
 
@@ -1137,6 +1137,11 @@
       transition: border-color 0.2s ease, background-color 0.2s ease;
     }
 
+    select.is-empty {
+      color: #64748B;
+      font-weight: 400;
+    }
+
     input::placeholder,
     textarea::placeholder {
       color: #94A3B8;
@@ -1208,11 +1213,18 @@
     }
 
     .footer-name {
+      display: inline-block;
       font-size: 1.45rem;
       font-weight: 700;
       color: #FFD166;
+      text-decoration: none;
       margin-bottom: 1.15rem;
       letter-spacing: -0.02em;
+      transition: color 0.2s ease;
+    }
+
+    .footer-name:hover {
+      color: #FFE299;
     }
 
     .footer-links {
@@ -2226,7 +2238,7 @@
 
           <div class="form-group">
             <label for="message">Message <span class="required">(required)</span></label>
-            <textarea id="message" name="message" placeholder="Tell me a little about your business, what you’re building, and your ideal timeline..." required></textarea>
+            <textarea id="message" name="message" required></textarea>
           </div>
 
           <button type="submit" class="submit-btn">Submit Inquiry &rarr;</button>
@@ -2266,7 +2278,7 @@
   <hr class="footer-divider">
   <footer class="footer-content">
     <div class="footer-inner">
-      <h3 class="footer-name">Ally Rossi</h3>
+      <a href="#" class="footer-name">Ally Rossi</a>
       <div class="footer-links">
         <a href="https://www.linkedin.com/in/allyrossi/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="mailto:rossially11@gmail.com">Email</a>
@@ -2274,7 +2286,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Accordion, Service Pre-fill & Hamburger Menu -->
+  <!-- JavaScript for Accordion, Service Pre-fill, Select Placeholder & Hamburger Menu -->
   <script>
     const menuToggle = id => document.getElementById(id);
     const toggleBtn = menuToggle('mobile-menu');
@@ -2313,6 +2325,16 @@
       });
     });
 
+    // Keep placeholder "Select an option" styled like "(required)" until an option is chosen
+    function syncSelectPlaceholderState(selectEl) {
+      selectEl.classList.toggle('is-empty', !selectEl.value);
+    }
+
+    document.querySelectorAll('select').forEach(selectEl => {
+      syncSelectPlaceholderState(selectEl);
+      selectEl.addEventListener('change', () => syncSelectPlaceholderState(selectEl));
+    });
+
     // Pre-select the matching Service Type when clicking "Inquire about this →"
     document.querySelectorAll('.service-inquire-link').forEach(link => {
       link.addEventListener('click', () => {
@@ -2320,6 +2342,7 @@
         const serviceSelect = document.getElementById('service-type');
         if (serviceSelect && selectedService) {
           serviceSelect.value = selectedService;
+          syncSelectPlaceholderState(serviceSelect);
         }
       });
     });
