@@ -49,11 +49,18 @@
     }
 
     .brand {
+      display: inline-block;
       font-size: 1.4rem;
       font-weight: 700;
       color: #ffffff;
       text-decoration: none;
       letter-spacing: -0.02em;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+
+    .brand:hover {
+      color: #FFD166;
+      transform: translateY(-2px);
     }
 
     .nav-links {
@@ -1207,11 +1214,12 @@
       text-decoration: none;
       margin-bottom: 1.15rem;
       letter-spacing: -0.02em;
-      transition: color 0.2s ease;
+      transition: transform 0.2s ease, color 0.2s ease;
     }
 
     .footer-name:hover {
       color: #5699CA;
+      transform: translateY(-2px);
     }
 
     .footer-links {
