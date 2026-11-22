@@ -837,33 +837,44 @@
     .services-section {
       background-color: #5699CA;
       color: #ffffff;
-      padding: 3.5rem 2.5rem 4.5rem 2.5rem;
+      padding: 4rem 2.5rem 5.5rem 2.5rem;
+    }
+
+    .services-container {
+      width: 100%;
+      max-width: 1180px;
+      margin: 0 auto;
     }
 
     .section-title {
-      font-size: 2.2rem;
+      font-size: clamp(2.4rem, 3.6vw, 3.1rem);
       font-weight: 700;
-      margin-bottom: 2.5rem;
-      letter-spacing: -0.02em;
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.025em;
+      line-height: 1.1;
     }
 
     .services-intro {
-      font-size: 1.2rem;
-      font-weight: 500;
-      max-width: 900px;
-      margin-bottom: 3.5rem;
-      line-height: 1.5;
+      font-size: 1.15rem;
+      font-weight: 400;
+      max-width: 650px;
+      margin-bottom: 3rem;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.94);
+    }
+
+    .services-list {
+      width: 100%;
     }
 
     .service-item {
-      border-top: 1px solid rgba(255, 255, 255, 0.6);
-      padding: 2.2rem 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 1.75rem 0;
       position: relative;
-      cursor: pointer;
     }
 
     .service-item:last-child {
-      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.35);
     }
 
     .service-header {
@@ -871,39 +882,106 @@
       justify-content: space-between;
       align-items: center;
       user-select: none;
+      cursor: pointer;
+      padding: 0.35rem 0.5rem;
+      border-radius: 6px;
+      transition: background-color 0.2s ease;
+    }
+
+    .service-header:hover {
+      background-color: rgba(255, 255, 255, 0.06);
     }
 
     .service-name {
       font-size: 1.45rem;
       font-weight: 600;
       font-style: italic;
+      letter-spacing: -0.01em;
     }
 
     .service-dash {
       font-size: 1.45rem;
-      font-weight: 300;
-      opacity: 0.8;
-      display: inline-block;
+      font-weight: 400;
+      opacity: 0.9;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      line-height: 1;
     }
 
     .service-content-wrapper {
       max-height: 0;
       overflow: hidden;
-      transition: max-height 0.35s ease-out, margin-top 0.35s ease-out;
+      transition: max-height 0.38s ease-out, margin-top 0.38s ease-out, opacity 0.3s ease;
+      opacity: 0;
     }
 
     .service-item.active .service-content-wrapper {
-      max-height: 300px;
-      margin-top: 1.2rem;
-      transition: max-height 0.35s ease-in, margin-top 0.35s ease-in;
+      max-height: 750px;
+      margin-top: 1.35rem;
+      opacity: 1;
+      transition: max-height 0.42s ease-in, margin-top 0.42s ease-in, opacity 0.35s ease;
     }
 
-    .service-description {
-      font-size: 1.1rem;
-      font-weight: 500;
-      max-width: 800px;
-      line-height: 1.6;
-      opacity: 0.95;
+    .service-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.15rem;
+    }
+
+    .service-detail-card {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      border-radius: 14px;
+      padding: 1.45rem 1.55rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .service-card-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.76);
+      margin-bottom: 0.65rem;
+    }
+
+    .service-card-copy {
+      font-size: 0.96rem;
+      font-weight: 400;
+      line-height: 1.55;
+      color: rgba(255, 255, 255, 0.96);
+    }
+
+    .service-timeline-value {
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: #ffffff;
+      margin-bottom: 1.15rem;
+    }
+
+    .service-inquire-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      width: fit-content;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.85);
+      padding-bottom: 2px;
+      margin-top: auto;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .service-inquire-link:hover {
+      color: #FFD166;
+      border-color: #FFD166;
     }
 
     /* Contact Section */
@@ -1206,6 +1284,11 @@
         margin-right: 0;
       }
 
+      .service-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 0.9rem;
+      }
+
       .contact-section {
         flex-direction: column-reverse;
         gap: 3rem;
@@ -1418,22 +1501,20 @@
       }
 
       .services-intro {
-        font-size: 1.1rem;
-        margin-bottom: 2.5rem;
-        font-weight: 500;
+        font-size: 1.05rem;
+        margin-bottom: 2.25rem;
       }
 
       .service-item {
-        padding: 1.75rem 0;
+        padding: 1.5rem 0;
       }
 
       .service-name {
         font-size: 1.3rem;
       }
 
-      .service-description {
-        font-size: 1rem;
-        font-weight: 500;
+      .service-detail-card {
+        padding: 1.25rem 1.3rem;
       }
 
       .form-row {
@@ -1820,66 +1901,165 @@
 
   <!-- Services Section -->
   <section id="services" class="services-section">
-    <h2 class="section-title">services</h2>
-    <p class="services-intro">Each build is completely custom. Please contact me directly for pricing, as it depends on the scope of your project.</p>
+    <div class="services-container">
+      <h2 class="section-title">services</h2>
+      <p class="services-intro">Please contact me directly for pricing, as it depends on the scope of your project.</p>
 
-    <div class="service-item">
-      <div class="service-header">
-        <h3 class="service-name">Landing Page</h3>
-        <span class="service-dash">+</span>
-      </div>
-      <div class="service-content-wrapper">
-        <p class="service-description">
-          A single page designed for events and specific promotional campaigns. It includes unique design, professional copy, and a custom domain setup.
-        </p>
-      </div>
-    </div>
+      <div class="services-list">
+        <!-- Service 1: Landing Page -->
+        <div class="service-item active">
+          <div class="service-header">
+            <h3 class="service-name">Landing Page</h3>
+            <span class="service-dash">&times;</span>
+          </div>
+          <div class="service-content-wrapper">
+            <div class="service-cards-grid">
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">What’s Included</div>
+                <p class="service-card-copy">
+                  A single page designed for events and specific promotional campaigns. It includes unique design, professional copy, and a custom domain setup.
+                </p>
+              </div>
 
-    <div class="service-item">
-      <div class="service-header">
-        <h3 class="service-name">Full Website Design</h3>
-        <span class="service-dash">+</span>
-      </div>
-      <div class="service-content-wrapper">
-        <p class="service-description">
-          A multi-page website built to showcase expertise and elevate your brand. I combine clean layouts with strategic structures so visitors can instantly trust what you offer.
-        </p>
-      </div>
-    </div>
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Best For</div>
+                <p class="service-card-copy">
+                  Events, product launches, and focused promotional campaigns that need a clean, high-converting online home.
+                </p>
+              </div>
 
-    <div class="service-item">
-      <div class="service-header">
-        <h3 class="service-name">Website Audit</h3>
-        <span class="service-dash">+</span>
-      </div>
-      <div class="service-content-wrapper">
-        <p class="service-description">
-          A comprehensive review of your site’s design, structure, and user experience. You’ll receive an actionable roadmap detailing immediate fixes and practical recommendations to improve overall usability.
-        </p>
-      </div>
-    </div>
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Typical Timeline</div>
+                <div class="service-timeline-value">1–2 weeks</div>
+                <a href="#contact" class="service-inquire-link" data-service="Landing Page">Inquire about this &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
 
-    <div class="service-item">
-      <div class="service-header">
-        <h3 class="service-name">Content Updates</h3>
-        <span class="service-dash">+</span>
-      </div>
-      <div class="service-content-wrapper">
-        <p class="service-description">
-          Ongoing design and copy maintenance to keep your site fresh, accurate, and aligned with strategic goals. Perfect for updating portfolio pieces, adding product listings, refreshing messaging, or tweaking layouts as operations evolve.
-        </p>
-      </div>
-    </div>
+        <!-- Service 2: Full Website Design -->
+        <div class="service-item">
+          <div class="service-header">
+            <h3 class="service-name">Full Website Design</h3>
+            <span class="service-dash">+</span>
+          </div>
+          <div class="service-content-wrapper">
+            <div class="service-cards-grid">
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">What’s Included</div>
+                <p class="service-card-copy">
+                  A multi-page website built to showcase expertise and elevate your brand. I combine clean layouts with strategic structures so visitors can instantly trust what you offer.
+                </p>
+              </div>
 
-    <div class="service-item">
-      <div class="service-header">
-        <h3 class="service-name">Logo Design</h3>
-        <span class="service-dash">+</span>
-      </div>
-      <div class="service-content-wrapper">
-        <p class="service-description">
-          A custom logo designed to anchor your brand identity across websites and social profiles.
-        </p>
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Best For</div>
+                <p class="service-card-copy">
+                  Small businesses, creatives, and independent brands ready for an elevated online presence that builds credibility.
+                </p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Typical Timeline</div>
+                <div class="service-timeline-value">3–6 weeks</div>
+                <a href="#contact" class="service-inquire-link" data-service="Full Website Design">Inquire about this &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 3: Website Audit -->
+        <div class="service-item">
+          <div class="service-header">
+            <h3 class="service-name">Website Audit</h3>
+            <span class="service-dash">+</span>
+          </div>
+          <div class="service-content-wrapper">
+            <div class="service-cards-grid">
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">What’s Included</div>
+                <p class="service-card-copy">
+                  A comprehensive review of your site’s design, structure, and user experience. You’ll receive an actionable roadmap detailing immediate fixes and practical recommendations to improve overall usability.
+                </p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Best For</div>
+                <p class="service-card-copy">
+                  Existing sites that feel outdated, clunky on mobile, or underperforming and need clear, prioritized next steps.
+                </p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Typical Timeline</div>
+                <div class="service-timeline-value">3–5 business days</div>
+                <a href="#contact" class="service-inquire-link" data-service="Website Audit">Inquire about this &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 4: Content Updates -->
+        <div class="service-item">
+          <div class="service-header">
+            <h3 class="service-name">Content Updates</h3>
+            <span class="service-dash">+</span>
+          </div>
+          <div class="service-content-wrapper">
+            <div class="service-cards-grid">
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">What’s Included</div>
+                <p class="service-card-copy">
+                  Ongoing design and copy maintenance to keep your site fresh, accurate, and aligned with strategic goals. Perfect for updating portfolio pieces, adding product listings, refreshing messaging, or tweaking layouts as operations evolve.
+                </p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Best For</div>
+                <p class="service-card-copy">
+                  Growing brands that regularly add portfolio work, update offerings, or want hands-off support keeping pages current.
+                </p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Typical Timeline</div>
+                <div class="service-timeline-value">2–4 business days</div>
+                <a href="#contact" class="service-inquire-link" data-service="Content Updates">Inquire about this &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Service 5: Logo Design -->
+        <div class="service-item">
+          <div class="service-header">
+            <h3 class="service-name">Logo Design</h3>
+            <span class="service-dash">+</span>
+          </div>
+          <div class="service-content-wrapper">
+            <div class="service-cards-grid">
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">What’s Included</div>
+                <p class="service-card-copy">
+                  A custom logo designed to anchor your brand identity across websites and social profiles.
+                </p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Best For</div>
+                <p class="service-card-copy">
+                  New businesses, podcasts, and rebrands looking for a clean, cohesive visual mark across web and social channels.
+                </p>
+              </div>
+
+              <div class="service-detail-card">
+                <div class="service-card-eyebrow">Typical Timeline</div>
+                <div class="service-timeline-value">1–2 weeks</div>
+                <a href="#contact" class="service-inquire-link" data-service="Logo Design">Inquire about this &rarr;</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1970,7 +2150,7 @@
     </div>
   </footer>
 
-  <!-- JavaScript for Accordion & Hamburger Menu -->
+  <!-- JavaScript for Accordion, Service Pre-fill & Hamburger Menu -->
   <script>
     const menuToggle = id => document.getElementById(id);
     const toggleBtn = menuToggle('mobile-menu');
@@ -1989,9 +2169,10 @@
       });
     });
 
-    // Single-Open Accordion Functionality with + / - Swap
-    document.querySelectorAll('.service-item').forEach(item => {
-      item.addEventListener('click', () => {
+    // Single-Open Accordion Functionality with + / × Swap
+    document.querySelectorAll('.service-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const item = header.closest('.service-item');
         const isActive = item.classList.contains('active');
         
         // Reset all items to closed and set their symbols to '+'
@@ -2000,10 +2181,21 @@
           el.querySelector('.service-dash').textContent = '+';
         });
 
-        // If the clicked item wasn't active, open it and change its symbol to '-'
+        // If the clicked item wasn't active, open it and change its symbol to '×'
         if (!isActive) {
           item.classList.add('active');
-          item.querySelector('.service-dash').textContent = '-';
+          item.querySelector('.service-dash').innerHTML = '&times;';
+        }
+      });
+    });
+
+    // Pre-select the matching Service Type when clicking "Inquire about this →"
+    document.querySelectorAll('.service-inquire-link').forEach(link => {
+      link.addEventListener('click', () => {
+        const selectedService = link.getAttribute('data-service');
+        const serviceSelect = document.getElementById('service-type');
+        if (serviceSelect && selectedService) {
+          serviceSelect.value = selectedService;
         }
       });
     });
