@@ -1090,8 +1090,9 @@
         background-color: #5699CA;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
-        gap: 1.5rem;
+        align-items: flex-start;
+        padding: 0 2.25rem;
+        gap: 1.65rem;
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.3s ease;
@@ -1106,6 +1107,24 @@
       .nav-links a {
         font-size: 1.8rem;
         font-weight: 500;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.65rem;
+      }
+
+      .nav-links a::after {
+        content: "";
+        width: 22px;
+        height: 18px;
+        background-color: currentColor;
+        -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><line x1='2' y1='10' x2='21' y2='10'/><polyline points='14 3 21 10 14 17'/></svg>") center / contain no-repeat;
+        mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 20' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><line x1='2' y1='10' x2='21' y2='10'/><polyline points='14 3 21 10 14 17'/></svg>") center / contain no-repeat;
+        transition: transform 0.2s ease;
+      }
+
+      .nav-links a:hover::after,
+      .nav-links a:active::after {
+        transform: translateX(4px);
       }
 
       .hero-section {
